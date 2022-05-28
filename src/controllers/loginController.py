@@ -1,5 +1,5 @@
-from models.Admin import Admin
-from views.loginView import LoginView
+from src.models.Admin import Admin
+from src.views.loginView import LoginView
 
 
 class loginController:
