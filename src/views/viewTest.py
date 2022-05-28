@@ -12,12 +12,12 @@ class View():
         self.app.exec() 
 
     # Abre a tela inicial
-    def abrir_cadastro_professor(self):
+    def abrir_tela_inicial(self):
         self.main_menu.show()
         self.app.exec() 
     
      # Abre a tela principal do admin
-    def abrir_area_logada(self):
+    def abrir_menu_admin(self):
         self.menu_admin.show()
         self.app.exec() 
 
@@ -26,6 +26,6 @@ v = View()
 # Abrir tela de Login:
 #v.abrir_tela_login()
 # Abrir tela de area logada: 
-#v.abrir_area_logada()
+#v.abrir_menu_admin()
 # Abrir tela de cadastro de professor: 
-v.abrir_cadastro_professor()
+v.abrir_tela_inicial()
