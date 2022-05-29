@@ -2,12 +2,14 @@ from src.models.Admin import Admin
 from src.views.loginView import LoginView
 
 
-class loginController:
-
-    def __init__(self):
-        admin = Admin()
-        view = LoginView()
+class LoginController:
+    def __init__(self, appController) -> None:
+        self.__app = appController
+        self.__view = LoginView(self)
     
+    def openView(self):
+        self.__view.openView()
+
     # Verifica se os campos estão vazios
     def isEmpty(self,admin):
         if admin.username() != "" and admin.password() != "":
@@ -22,13 +24,11 @@ class loginController:
 
     # Efetua o login
     def Login(self,admin):
-        self.view.openLoginView()
-
         if self.isEmpty(admin):
             if self.isValidLogin(admin):
-                self.view.openAdminMenu()
+                self.__app.openAdminMenu()
             else:
-                print("Usuário ou senha estão incorretos!")
+                self.__view.invalidUser()
         else:
-            print("Preencha os campos obrigatório!")
+            self.__view.emptyFields()
 

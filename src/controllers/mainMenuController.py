@@ -13,9 +13,5 @@ class MainMenuController:
     self.__view.openView()
 
   def goToSignInAdmin(self):
-    self.__app.openAdminMenu()
+    self.__app.openLoginView()
 
-
-  
-
-  

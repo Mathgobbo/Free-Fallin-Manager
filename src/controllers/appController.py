@@ -1,6 +1,7 @@
 
 
 from PyQt5.QtWidgets import QApplication
+from src.controllers.loginController import LoginController
 from src.controllers.AdminListController import AdminListController
 from src.controllers.adminMenuController import AdminMenuController
 from src.controllers.signUpAdminController import SignUpAdminController
@@ -13,6 +14,7 @@ class AppController:
     self.__signUpAdminController = SignUpAdminController(self)
     self.__adminMenuController = AdminMenuController(self)
     self.__adminList = AdminListController(self)
+    self.__loginController = LoginController(self)
 
   
   def start(self):
@@ -27,3 +29,6 @@ class AppController:
 
   def openAdminList(self):
     self.__adminList.openView()
+  
+  def openLoginView(self):
+    self.__loginController.openView()
