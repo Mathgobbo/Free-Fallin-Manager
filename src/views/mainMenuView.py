@@ -9,15 +9,16 @@ class MainMenuView(QMainWindow):
         uic.loadUi(r'.\src\resources\mainMenu.ui', self)
 
         self.loginAdminButton = self.findChild(QPushButton,"botaoLogin")
-        self.loginAdminButton.clicked.connect(self.goToSignUpAdmin)
+        self.loginAdminButton.clicked.connect(self.goToSignIn)
     
 
     def openView(self):
         self.show()
     
-    def goToSignUpAdmin(self):
+    
+    def goToSignIn(self):
         self.close()
-        self.__controller.goToSignUpAdmin()
+        self.__controller.goToSignInAdmin()
     
     
     
