@@ -1,12 +1,14 @@
-from PyQt5 import uic, QtWidgets
+from PyQt5 import uic
+from PyQt5.QtWidgets import QMainWindow
 
 
-class SignUpAdminView:
+class SignUpAdminView(QMainWindow):
     
-    app = QtWidgets.QApplication([])
-    view = uic.loadUi(r'.\src\resources\signUpAdmin.ui')
+    def __init__(self, controller):
+        self.__controller = controller
+        super(SignUpAdminView, self).__init__()
+        uic.loadUi(r'.\src\resources\signUpAdmin.ui', self)
 
     def openSignUpAdminView(self):
-        self.view.show()
-        self.app.exec() 
+        self.show()
 

@@ -1,10 +1,9 @@
 
-from src.controllers.signUpAdminController import SignUpAdminController
-from src.views.signUpAdminView import SignUpAdminView
 
 
-signUpAdminController = SignUpAdminController()
 
-v2 = SignUpAdminView()
+from src.controllers.appController import AppController
 
-v2.openSignUpAdminView()
+
+app = AppController()
+app.start()
