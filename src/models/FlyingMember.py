@@ -1,6 +1,6 @@
 
 
-from FlyingMemberTypeEnum import FlyingMemberTypeEnum
+from src.models.FlyingMemberTypeEnum import FlyingMemberTypeEnum
 
 
 class FlyingMember:
