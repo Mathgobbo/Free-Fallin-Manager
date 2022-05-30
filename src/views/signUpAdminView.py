@@ -23,43 +23,17 @@ class SignUpAdminView(QMainWindow):
         self.signUpButton.clicked.connect(self.signUp)
 
         self.backButton = self.findChild(QPushButton, "backButton")
+        self.backButton.clicked.connect(self.backButtonClick)
+
+    def signUp(self):
+        self.__controller.signUp()
 
     def openSignUpAdminView(self):
         self.show()
     
     def backButtonClick(self):
         self.close()
+        self.__controller.back()
 
-    def signUp(self):
-        isValid = self.isFormValid()
-        if(not isValid): 
-            return
-        
-        newAdmin = Admin(self.usernameInput.text(), self.passInput.text())
-        print(newAdmin)
-
-    def isFormValid(self): 
-        isValid = True
-
-        self.usernameError.setText("")
-        self.passError.setText("")
-        self.confirmPassError.setText("")
-
-        if(self.usernameInput.text() == ""):
-            self.usernameError.setText("Insira um Nome de Usuário")
-            isValid =  False
-        if(self.passInput.text() == ""):
-            self.passError.setText("Insira uma Senha")
-            isValid =  False
-        if(self.confirmPassInput.text() == ""):
-            self.confirmPassError.setText("Confirme a senha informada")
-            isValid =  False
-
-        if(self.confirmPassInput.text() != self.passInput.text()):
-            self.confirmPassError.setText("Confirmação de Senha está diferente da senha informada")
-            isValid =  False
-
-
-        return isValid
-    
+  
 
