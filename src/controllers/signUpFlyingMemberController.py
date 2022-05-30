@@ -1,7 +1,5 @@
 from src.models.FlyingMember import FlyingMember
 from src.views.signUpFlyingMemberView import SignUpFlyingMemberView
-from PyQt5 import uic
-from PyQt5.QtWidgets import QMainWindow, QLineEdit, QPushButton, QLabel
 
 class SignUpFlyingMemberController:
     def __init__(self, app) -> None:
@@ -16,13 +14,21 @@ class SignUpFlyingMemberController:
             return True
         return False
     
+    # Principal!
     def signUp(self):
         isValid = self.isFormValid()
         if (not isValid):
             return
         
         # Ta faltando o tipo
+        # Ver como vem o Tipo la do ComboBox pra adicionar abaixo
         newFlyingMember = FlyingMember(self.cpfInput.text(), self.nameInput.text(), self.phoneInput.text(), self.weightInput.text(), self.heightInput.text())
+
+        # Pickle: Serializar membro
+
+        # Sucesso? 
+        #   - Voltar pra Lista com o novo membro já na lista
+        #   - Mostrar menmsagem de sucesso na tela
     
     def isFormValid(self):
         isValid = True
