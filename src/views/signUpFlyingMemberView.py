@@ -1,5 +1,5 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import QLineEdit, QLabel, QMainWindow, QComboBox, QPushButton
+from PyQt5.QtWidgets import QLineEdit, QLabel, QMainWindow, QComboBox, QPushButton, QSpinBox
 
 
 class SignUpFlyingMemberView(QMainWindow):
@@ -18,15 +18,15 @@ class SignUpFlyingMemberView(QMainWindow):
         self.phoneInput = self.findChild(QLineEdit, "phoneInput")
         self.phoneError = self.findChild(QLabel, "phoneError")
 
-        self.weightInput = self.findChild(QLineEdit, "weightInput")
+        self.weightInput = self.findChild(QSpinBox, "weightInput")
         self.weightError = self.findChild(QLabel, "weightError")
 
-        self.heightInput = self.findChild(QLineEdit, "heightInput")
+        self.heightInput = self.findChild(QSpinBox, "heightInput")
         self.heightError = self.findChild(QLabel, "heightError")
 
-        self.typeInput = self.findChild(QComboBox, "typeInput")
+        self.typeInput = self.findChild(QComboBox, "comboBox")
 
-        self.signUpButton = self.findChild(QPushButton, "pushButton")
+        self.signUpButton = self.findChild(QPushButton, "cadastrar")
         self.signUpButton.clicked.connect(self.signUp)
 
 

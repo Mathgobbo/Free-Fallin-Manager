@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QApplication
 from src.controllers.signUpFlyingMemberController import SignUpFlyingMemberController
 from src.controllers.flyingMembersMenuController import FlyingMembersMenuController
 from src.controllers.loginController import LoginController
-from src.controllers.AdminListController import AdminListController
+from src.controllers.adminListController import AdminListController
 from src.controllers.adminMenuController import AdminMenuController
 from src.controllers.signUpAdminController import SignUpAdminController
 from src.controllers.mainMenuController import MainMenuController
