@@ -22,7 +22,7 @@ class SignUpFlyingMemberController:
         
         # Ta faltando o tipo
         # Ver como vem o Tipo la do ComboBox pra adicionar abaixo
-        newFlyingMember = FlyingMember(self.cpfInput.text(), self.nameInput.text(), self.phoneInput.text(), self.weightInput.text(), self.heightInput.text())
+        newFlyingMember = FlyingMember(self.__view.cpfInput.text(), self.__view.nameInput.text(), self.__view.phoneInput.text(), self.__view.typeInput.currentData(), self.__view.weight.text(), self.__view.heightInput.text())
 
         # Pickle: Serializar membro
 
