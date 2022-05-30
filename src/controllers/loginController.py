@@ -29,6 +29,7 @@ class LoginController:
         newAdmin = Admin(username, password)
         if self.isEmpty(newAdmin):
             if self.isValidLogin(newAdmin):
+                self.__view.close()
                 self.__app.openAdminMenu()
             else:
                 self.__view.invalidUser()
