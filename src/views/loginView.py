@@ -21,8 +21,6 @@ class LoginView(QMainWindow):
 
     # Chama o controllador e passa os valores dos campos de texto
     def login(self):
-        print(self.usernameInput.text())
-        print(self.passwordInput.text())
         self.__controller.Login(self.usernameInput.text(),self.passwordInput.text())
     
     # Atualiza mensagem de erro
