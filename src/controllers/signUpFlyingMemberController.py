@@ -4,25 +4,9 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QLineEdit, QPushButton, QLabel
 
 class SignUpFlyingMemberController:
-    def __init__(self) -> None:
-        self.__view = SignUpFlyingMemberView()
-
-        self.cpfInput = self.findChild(QLineEdit, "cpfInput")
-        self.cpfError = self.findChild(QLabel, "cpfError")
-
-        self.nameInput = self.findChild(QLineEdit, "nameInput")
-        self.nameError = self.findChild(QLabel, "nameError")
-
-        self.phoneInput = self.findChild(QLineEdit, "phoneInput")
-        self.phoneError = self.findChild(QLabel, "phoneError")
-
-        self.weightInput = self.findChild(QLineEdit, "weightInput")
-        self.weightError = self.findChild(QLabel, "weightError")
-
-        self.heightInput = self.findChild(QLineEdit, "heightInput")
-        self.heightError = self.findChild(QLabel, "heightError")
-
-        
+    def __init__(self, app) -> None:
+        self.__app = app
+        self.__view = SignUpFlyingMemberView(self)
 
     def openView(self):
         self.__view.show()
@@ -43,30 +27,30 @@ class SignUpFlyingMemberController:
     def isFormValid(self):
         isValid = True
 
-        self.cpfError.setText("")
-        self.nameError.setText("")
-        self.phoneError.setText("")
-        self.weight.setText("")
-        self.height.setText("")
+        self.view.cpfError.setText("")
+        self.view.nameError.setText("")
+        self.view.phoneError.setText("")
+        self.view.weight.setText("")
+        self.view.height.setText("")
 
-        if(self.cpfInput.text() == ""):
-            self.cpfError.setText("Insira seu CPF")
+        if(self.view.cpfInput.text() == ""):
+            self.view.cpfError.setText("Insira seu CPF")
             isValid =  False
         
-        if(self.nameInput.text() == ""):
-            self.nameError.setText("Insira seu Nome")
+        if(self.view.nameInput.text() == ""):
+            self.view.nameError.setText("Insira seu Nome")
             isValid =  False
         
-        if(self.phoneInput.text() == ""):
-            self.phoneError.setText("Insira seu número de telefone")
+        if(self.view.phoneInput.text() == ""):
+            self.view.phoneError.setText("Insira seu número de telefone")
             isValid =  False
         
-        if(self.weightInput.text() == ""):
-            self.weightError.setText("Insira seu peso")
+        if(self.view.weightInput.text() == ""):
+            self.view.weightError.setText("Insira seu peso")
             isValid =  False
         
-        if(self.heightInput.text() == ""):
-            self.heightError.setText("Insira sua altura")
+        if(self.view.heightInput.text() == ""):
+            self.view.heightError.setText("Insira sua altura")
             isValid =  False
         
         return isValid

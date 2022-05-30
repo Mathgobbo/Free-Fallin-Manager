@@ -14,3 +14,7 @@ class AdminListController:
   def back(self):
     self.__app.openAdminMenu()
 
+  def goToSignUpAdmin(self):
+    self.__view.close()
+    self.__app.openSignUpAdmin()
+

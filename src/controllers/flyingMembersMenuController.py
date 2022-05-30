@@ -8,3 +8,6 @@ class FlyingMembersMenuController:
     
     def openView(self):
         self.__view.openView()
+
+    def goToAddMember(self):
+        self.__app.openAddMemberView()

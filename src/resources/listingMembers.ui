@@ -39,6 +39,7 @@
     <property name="font">
      <font>
       <pointsize>18</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -58,6 +59,7 @@
     <property name="font">
      <font>
       <pointsize>11</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -77,6 +79,7 @@
     <property name="font">
      <font>
       <pointsize>11</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -96,6 +99,7 @@
     <property name="font">
      <font>
       <pointsize>11</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -115,6 +119,7 @@
     <property name="font">
      <font>
       <pointsize>11</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -122,7 +127,7 @@
      <string>FUNÇÃO</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="addMemberButton">
     <property name="geometry">
      <rect>
       <x>510</x>
@@ -160,7 +165,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

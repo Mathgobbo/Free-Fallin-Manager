@@ -45,7 +45,7 @@
      <string>Administradores</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="backButton_2">
+   <widget class="QPushButton" name="addAdminButton">
     <property name="geometry">
      <rect>
       <x>490</x>
