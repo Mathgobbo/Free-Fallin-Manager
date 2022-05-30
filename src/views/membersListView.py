@@ -9,7 +9,10 @@ class MembersListView(QMainWindow):
         self.__controller = controller
         super(MembersListView, self).__init__()
         uic.loadUi(r'.\src\resources\listingMembers.ui', self)
+
     
     def openView(self):
         self.show()
     
+    def gotToAddMember(self):
+        self.__controller.goToAddMember()

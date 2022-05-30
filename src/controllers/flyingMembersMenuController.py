@@ -1,7 +1,7 @@
 from src.views.membersListView import MembersListView
 
 
-class MembersMenuController:
+class FlyingMembersMenuController:
     def __init__(self, appController) -> None:
         self.__app = appController
         self.__view = MembersListView(self)

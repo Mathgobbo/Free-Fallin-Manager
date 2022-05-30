@@ -16,6 +16,9 @@ class AdminMenuController:
   def goToAdminList(self):
     self.__app.openAdminList()
 
+  def goToFlyingMembersList(self):
+    self.__app.openFlyingMembersListView()
+
   def goToSignUpAdmin(self):
     self.__app.openSignUpAdmin()
 

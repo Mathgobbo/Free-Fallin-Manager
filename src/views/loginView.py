@@ -6,7 +6,7 @@ class LoginView(QMainWindow):
     def __init__(self, controller):
         self.__controller = controller
         super(LoginView, self).__init__()
-        uic.loadUi(r'C:\free-fallin-manager\src\resources\login.ui',self)
+        uic.loadUi(r'.\src\resources\login.ui',self)
 
         self.usernameInput = self.findChild(QLineEdit, "username")
         self.passwordInput = self.findChild(QLineEdit, "password")

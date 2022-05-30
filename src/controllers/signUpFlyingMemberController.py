@@ -22,9 +22,10 @@ class SignUpFlyingMemberController:
         self.heightInput = self.findChild(QLineEdit, "heightInput")
         self.heightError = self.findChild(QLabel, "heightError")
 
+        
 
     def openView(self):
-        self.__view = SignUpFlyingMemberView()
+        self.__view.show()
     
     def isEmpty(self, flyingMember):
         if flyingMember.cpf() != "" and flyingMember.name() != "" and flyingMember.phone() != "" and flyingMember.weight() != "" and flyingMember.height() != "":
