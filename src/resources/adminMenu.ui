@@ -1,128 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-  <class>MainWindow</class>
-  <widget class="QMainWindow" name="MainWindow">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>603</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="title">
     <property name="geometry">
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>800</width>
-        <height>603</height>
-      </rect>
+     <rect>
+      <x>270</x>
+      <y>50</y>
+      <width>301</width>
+      <height>81</height>
+     </rect>
     </property>
-    <property name="windowTitle">
-      <string>MainWindow</string>
+    <property name="font">
+     <font>
+      <pointsize>24</pointsize>
+     </font>
     </property>
-    <widget class="QWidget" name="centralwidget">
-      <widget class="QLabel" name="title">
-        <property name="geometry">
-          <rect>
-            <x>270</x>
-            <y>50</y>
-            <width>301</width>
-            <height>81</height>
-          </rect>
-        </property>
-        <property name="font">
-          <font>
-            <pointsize>24</pointsize>
-          </font>
-        </property>
-        <property name="text">
-          <string>Menu Administração</string>
-        </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton">
-        <property name="geometry">
-          <rect>
-            <x>150</x>
-            <y>140</y>
-            <width>511</width>
-            <height>41</height>
-          </rect>
-        </property>
-        <property name="text">
-          <string>VISUALIZAR VOOS</string>
-        </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_2">
-        <property name="geometry">
-          <rect>
-            <x>150</x>
-            <y>190</y>
-            <width>511</width>
-            <height>41</height>
-          </rect>
-        </property>
-        <property name="text">
-          <string>VERIFICAR SOLICITAÇÕES PENDENTES</string>
-        </property>
-      </widget>
-      <widget class="QPushButton" name="membros_de_voo">
-        <property name="geometry">
-          <rect>
-            <x>150</x>
-            <y>240</y>
-            <width>511</width>
-            <height>41</height>
-          </rect>
-        </property>
-        <property name="text">
-          <string>MEMBROS DE VOO</string>
-        </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_4">
-        <property name="geometry">
-          <rect>
-            <x>150</x>
-            <y>290</y>
-            <width>511</width>
-            <height>41</height>
-          </rect>
-        </property>
-        <property name="text">
-          <string>AVIÕES</string>
-        </property>
-      </widget>
-      <widget class="QPushButton" name="admins">
-        <property name="geometry">
-          <rect>
-            <x>150</x>
-            <y>340</y>
-            <width>511</width>
-            <height>41</height>
-          </rect>
-        </property>
-        <property name="text">
-          <string>ADMINISTRADORES</string>
-        </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_6">
-        <property name="geometry">
-          <rect>
-            <x>150</x>
-            <y>390</y>
-            <width>511</width>
-            <height>41</height>
-          </rect>
-        </property>
-        <property name="text">
-          <string>EMITIR RELATÓRIO DOS SALTOS</string>
-        </property>
-      </widget>
-    </widget>
-    <widget class="QMenuBar" name="menubar">
-      <property name="geometry">
-        <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>800</width>
-          <height>21</height>
-        </rect>
-      </property>
-    </widget>
-    <widget class="QStatusBar" name="statusbar" />
+    <property name="text">
+     <string>Menu Administração</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>140</y>
+      <width>511</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(68, 165, 255)</string>
+    </property>
+    <property name="text">
+     <string>VISUALIZAR VOOS</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>190</y>
+      <width>511</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(68, 165, 255)</string>
+    </property>
+    <property name="text">
+     <string>VERIFICAR SOLICITAÇÕES PENDENTES</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="membros_de_voo">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>240</y>
+      <width>511</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(68, 165, 255)</string>
+    </property>
+    <property name="text">
+     <string>MEMBROS DE VOO</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>290</y>
+      <width>511</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(68, 165, 255)</string>
+    </property>
+    <property name="text">
+     <string>AVIÕES</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="admins">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>340</y>
+      <width>511</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(68, 165, 255)</string>
+    </property>
+    <property name="text">
+     <string>ADMINISTRADORES</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>390</y>
+      <width>511</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(68, 165, 255)</string>
+    </property>
+    <property name="text">
+     <string>EMITIR RELATÓRIO DOS SALTOS</string>
+    </property>
+   </widget>
   </widget>
-  <resources />
-  <connections />
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
 </ui>
