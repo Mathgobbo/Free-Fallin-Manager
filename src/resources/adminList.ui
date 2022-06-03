@@ -58,7 +58,7 @@
      <string>Adicionar Administrador</string>
     </property>
    </widget>
-   <widget class="QListWidget" name="listWidget">
+   <widget class="QTableWidget" name="adminsTable">
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -67,16 +67,16 @@
       <height>192</height>
      </rect>
     </property>
-    <item>
+    <column>
      <property name="text">
-      <string>Pateta</string>
+      <string>Nome</string>
      </property>
-    </item>
-    <item>
+    </column>
+    <column>
      <property name="text">
-      <string>Maça</string>
+      <string/>
      </property>
-    </item>
+    </column>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

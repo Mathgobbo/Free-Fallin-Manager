@@ -34,6 +34,11 @@ class SignUpAdminView(QMainWindow):
     def backButtonClick(self):
         self.close()
         self.__controller.back()
+    
+    def clearInputs(self):
+        self.usernameInput.setText("")
+        self.passInput.setText("")
+        self.confirmPassInput.setText("")
 
   
 
