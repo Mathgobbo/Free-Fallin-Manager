@@ -5,9 +5,9 @@ from src.views.adminListView import AdminListView
 
 
 class AdminListController:
-  def __init__(self, app) -> None:
+  def __init__(self, app, adminDao) -> None:
     self.__app = app
-    self.__dao = AdminDao()
+    self.__dao = adminDao
     self.__view = AdminListView(self)
 
   def openView(self):

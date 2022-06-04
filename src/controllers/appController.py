@@ -1,6 +1,7 @@
 
 
 from PyQt5.QtWidgets import QApplication
+from src.dao.adminDao import AdminDao
 from src.controllers.signUpFlyingMemberController import SignUpFlyingMemberController
 from src.controllers.flyingMembersMenuController import FlyingMembersMenuController
 from src.controllers.loginController import LoginController
@@ -12,10 +13,12 @@ from src.controllers.mainMenuController import MainMenuController
 class AppController:
   def __init__(self):
     self.__app = QApplication([])
+    # DAOs
+    self.__adminDao = AdminDao()
     self.__mainMenuController = MainMenuController(self)
-    self.__signUpAdminController = SignUpAdminController(self)
     self.__adminMenuController = AdminMenuController(self)
-    self.__adminList = AdminListController(self)
+    self.__adminList = AdminListController(self, self.__adminDao)
+    self.__signUpAdminController = SignUpAdminController(self, self.__adminDao)
     self.__loginController = LoginController(self)
     self.__flyingMembersController = FlyingMembersMenuController(self)
     self.__signUpFlyingMemberController = SignUpFlyingMemberController(self)

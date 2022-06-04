@@ -5,15 +5,16 @@ from src.views.signUpAdminView import SignUpAdminView
 
 
 class SignUpAdminController:
-  def __init__(self, app) -> None:
+  def __init__(self, app, adminDao) -> None:
     self.__view = SignUpAdminView(self)
-    self.__dao = AdminDao()
+    self.__dao = adminDao
     self.__app = app
 
   def openView(self):
     self.__view.openSignUpAdminView()
   
   def back(self):
+    self.__view.close()
     self.__app.openAdminList()
 
   def signUp(self):
