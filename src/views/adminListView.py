@@ -38,7 +38,9 @@ class AdminListView(QMainWindow):
         admins =  self.__controller.getAdmins()
         self.table.setRowCount(len(admins))
         for admin in admins:
-            self.table.setItem(row, 0, QTableWidgetItem(admin.username))
+            usernameColumn = QLabel(admin.username)
+            usernameColumn.mousePressEvent = self.openEditAdmin(admin)
+            self.table.setCellWidget(row, 0, usernameColumn)
             button = QToolButton()
             button.setIcon(QIcon("./src/resources/trashIcon.png"))
             button.clicked.connect(self.deleteGenerator(admin))
@@ -50,3 +52,8 @@ class AdminListView(QMainWindow):
             self.__controller.deleteAdmin(admin.username)
             self.loadData()
         return delete
+    
+    def openEditAdmin(self, admin):
+        def editAdmin(event):
+            self.__controller.editAdmin(admin)
+        return editAdmin

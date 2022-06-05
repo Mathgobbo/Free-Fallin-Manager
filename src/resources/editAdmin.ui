@@ -123,7 +123,7 @@
      <string>Edição de Administrador</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="usernameInput_2">
+   <widget class="QLineEdit" name="usernameInput">
     <property name="geometry">
      <rect>
       <x>280</x>
@@ -237,7 +237,7 @@
      <string>FreeFalling Manager</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="backButton">
     <property name="geometry">
      <rect>
       <x>440</x>

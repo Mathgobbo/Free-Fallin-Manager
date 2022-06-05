@@ -19,5 +19,10 @@ class AdminDao(AbstractDAO):
         if isinstance(key, str):
             return super().remove(key)
 
+    def update(self, username, admin):
+        super().remove(username)
+        super().add(admin.username, admin)
+        return
+
     def getAll(self):
         return super().getAll()

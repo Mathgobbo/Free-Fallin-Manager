@@ -25,4 +25,8 @@ class AdminListController:
 
   def deleteAdmin(self, username):
     self.__dao.remove(username)
+  
+  def editAdmin(self, admin):
+    self.__view.close()
+    self.__app.openEditAdmin(admin)
 
