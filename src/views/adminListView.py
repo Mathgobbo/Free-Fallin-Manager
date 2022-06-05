@@ -41,7 +41,12 @@ class AdminListView(QMainWindow):
             self.table.setItem(row, 0, QTableWidgetItem(admin.username))
             button = QToolButton()
             button.setIcon(QIcon("./src/resources/trashIcon.png"))
+            button.clicked.connect(self.deleteGenerator(admin))
             self.table.setCellWidget(row, 1, button)
             row = row + 1
     
-
+    def deleteGenerator(self, admin):
+        def delete():
+            self.__controller.deleteAdmin(admin.username)
+            self.loadData()
+        return delete

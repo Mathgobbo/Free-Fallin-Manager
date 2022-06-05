@@ -23,3 +23,6 @@ class AdminListController:
   def getAdmins(self):
     return self.__dao.getAll()
 
+  def deleteAdmin(self, username):
+    self.__dao.remove(username)
+

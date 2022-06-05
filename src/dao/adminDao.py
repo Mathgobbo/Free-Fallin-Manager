@@ -8,7 +8,7 @@ class AdminDao(AbstractDAO):
         super().__init__('admin.pkl')
 
     def get(self, key):
-        if isinstance(key, int):
+        if isinstance(key, str):
             return super().get(key)
 
     def add(self, username, admin):
@@ -16,7 +16,7 @@ class AdminDao(AbstractDAO):
             return super().add(username, admin)
 
     def remove(self, key):
-        if isinstance(key, int):
+        if isinstance(key, str):
             return super().remove(key)
 
     def getAll(self):
