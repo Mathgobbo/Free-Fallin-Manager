@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QMainWindow, QLineEdit, QLabel, QPushButton, QApplication
 from PyQt5 import uic
-from src.models.Admin import Admin
+from models.Administrator import Admin
 
 class LoginView(QMainWindow):
     def __init__(self, controller):
