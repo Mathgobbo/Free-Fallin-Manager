@@ -1,5 +1,5 @@
 
-from src.models.Admin import Admin
+from models.Administrator import Admin
 from src.dao.abstractDAO import AbstractDAO
 
 

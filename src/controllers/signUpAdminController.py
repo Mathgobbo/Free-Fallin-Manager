@@ -1,6 +1,6 @@
 
 from src.dao.adminDao import AdminDao
-from src.models.Admin import Admin
+from models.Administrator import Admin
 from src.views.signUpAdminView import SignUpAdminView
 
 

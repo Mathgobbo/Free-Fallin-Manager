@@ -1,7 +1,7 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QLineEdit, QPushButton, QLabel
 
-from src.models.Admin import Admin
+from models.Administrator import Admin
 
 
 class SignUpAdminView(QMainWindow):
