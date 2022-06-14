@@ -1,6 +1,7 @@
 from gettext import NullTranslations
-from models.Administrator import Admin
+from src.models.Administrator import Admin
 from src.views.loginView import LoginView
+from src.controllers.AdminListController import AdminListController
 
 
 class LoginController:
@@ -13,22 +14,23 @@ class LoginController:
         self.__view.openView()
 
     # Verifica se os campos estão vazios
-    def isEmpty(self,Admin):
-        if Admin.username != "" and Admin.password != "":
+    def isEmpty(self, username, password):
+        newAdmin = Admin(username, password)
+        if newAdmin.username != "" and newAdmin.password != "":
             return True
         return False
 
     # Verifica se o login é valido
-    def isValidLogin(self,Admin):
-        if Admin.username == "root" and Admin.password == "pass":
+    def isValidLogin(self, username, password):
+        newAdmin = Admin(username, password)
+        if newAdmin.username == "root" and newAdmin.password == "pass":
             return True
         return False
 
     # Efetua o login
     def Login(self,username, password):
-        newAdmin = Admin(username, password)
-        if self.isEmpty(newAdmin):
-            if self.isValidLogin(newAdmin):
+        if self.isEmpty(username, password):
+            if self.isValidLogin(username, password):
                 self.__view.close()
                 self.__app.openAdminMenu()
             else:
