@@ -51,3 +51,7 @@ class AppController:
 
   def openAddMemberView(self):
     self.__signUpFlyingMemberController.openView()
+
+  @property
+  def adminList(self):
+    return self.__adminList

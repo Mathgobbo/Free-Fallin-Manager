@@ -22,10 +22,12 @@ class LoginController:
 
     # Verifica se o login é valido
     def isValidLogin(self, username, password):
+        adminListController = self.__app.adminList
         newAdmin = Admin(username, password)
-        if newAdmin.username == "root" and newAdmin.password == "pass":
-            return True
-        return False
+        for admin in adminListController.getAdmins():
+            if newAdmin.username == admin.username and newAdmin.password == admin.password:
+                return True
+
 
     # Efetua o login
     def Login(self,username, password):
