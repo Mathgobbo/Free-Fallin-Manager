@@ -14,6 +14,9 @@ class AdminMenuView(QMainWindow):
         self.flyingMembersListButton = self.findChild(QPushButton,"membros_de_voo")
         self.flyingMembersListButton.clicked.connect(self.goToFlyingMembers)
 
+        self.planeListButton = self.findChild(QPushButton,"avioes")
+        self.planeListButton.clicked.connect(self.goToPlanes)
+
     def openView(self):
         self.show()
     
@@ -24,6 +27,10 @@ class AdminMenuView(QMainWindow):
     def goToAdmins(self):
         self.close()
         self.__controller.goToAdminList()
+    
+    def goToPlanes(self):
+        self.close()
+        self.__controller.goToPlanesList()
     
     
     

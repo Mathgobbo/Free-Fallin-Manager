@@ -49,7 +49,7 @@ background-color: rgb(68, 165, 255)</string>
      </widget>
     </item>
     <item row="6" column="0">
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="avioes">
       <property name="minimumSize">
        <size>
         <width>400</width>

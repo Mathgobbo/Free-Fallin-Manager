@@ -5,8 +5,8 @@ from src.controllers.AdminListController import AdminListController
 
 
 class LoginController:
-    def __init__(self, appController) -> None:
-        self.__app = appController
+    def __init__(self, controller) -> None:
+        self.__controller = controller
         self.__view = LoginView(self)
     
     # Abre a tela
@@ -22,7 +22,7 @@ class LoginController:
 
     # Verifica se o login é valido
     def isValidLogin(self, username, password):
-        adminListController = self.__app.adminList
+        adminListController = self.__controller.adminList
         newAdmin = Admin(username, password)
         for admin in adminListController.getAdmins():
             if newAdmin.username == admin.username and newAdmin.password == admin.password:
@@ -34,7 +34,7 @@ class LoginController:
         if self.isEmpty(username, password):
             if self.isValidLogin(username, password):
                 self.__view.close()
-                self.__app.openAdminMenu()
+                self.__controller.openAdminMenu()
             else:
                 self.__view.invalidUser()
         else:

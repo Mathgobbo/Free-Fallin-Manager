@@ -22,6 +22,9 @@ class AdminMenuController:
   def goToSignUpAdmin(self):
     self.__app.openSignUpAdmin()
 
+  def goToPlanesList(self):
+    self.__app.openPlaneList()
+
 
   
 
