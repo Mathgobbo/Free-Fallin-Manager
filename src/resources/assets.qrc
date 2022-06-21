@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="success">
+    <file>check-circle.png</file>
+  </qresource>
+</RCC>
