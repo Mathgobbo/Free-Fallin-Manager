@@ -24,8 +24,9 @@ class AdminMenuController:
 
   def goToPlanesList(self):
     self.__app.openPlaneList()
-
-
   
+  def goToFlightsList(self):
+    self.__app.openFlightsListView()
+
 
   
