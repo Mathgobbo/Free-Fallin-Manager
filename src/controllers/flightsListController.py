@@ -9,3 +9,6 @@ class FlightsListController:
     
     def openView(self):
         self.__view.show()
+    
+    def goToAddFlight(self):
+        self.__app.openFlightRegistrationView()

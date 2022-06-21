@@ -13,6 +13,7 @@ from src.controllers.adminMenuController import AdminMenuController
 from src.controllers.signUpAdminController import SignUpAdminController
 from src.controllers.mainMenuController import MainMenuController
 from src.controllers.flightsListController import FlightsListController
+from src.controllers.flightRegistrationController import FlightRegistrationController
 
 
 class AppController:
@@ -33,6 +34,7 @@ class AppController:
     self.__signUpFlyingMemberController = SignUpFlyingMemberController(self)
     self.__planeListController = PlaneListController(self, self.__planeDao)
     self.__flightsListController = FlightsListController(self)
+    self.__flightRegistrationController = FlightRegistrationController(self)
   
   def start(self):
     self.__mainMenuController.openView()
@@ -64,6 +66,9 @@ class AppController:
   
   def openFlightsListView(self):
     self.__flightsListController.openView()
+  
+  def openFlightRegistrationView(self):
+    self.__flightRegistrationController.openView()
 
   @property
   def adminList(self):

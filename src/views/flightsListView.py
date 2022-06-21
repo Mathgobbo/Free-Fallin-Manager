@@ -9,6 +9,12 @@ class FlightsListView(QMainWindow):
         uic.loadUi(r'.\src\resources\listingFlights.ui', self)
 
         self.__controller = controller
+
+        self.addFlightButton = self.findChild(QPushButton, "addFlightButton")
+        self.addFlightButton.clicked.connect(self.goToAddFlight)
     
     def openFlightsListView(self):
         self.show()
+    
+    def goToAddFlight(self):
+        self.__controller.goToAddFlight()

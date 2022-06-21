@@ -27,6 +27,3 @@ class AdminMenuController:
   
   def goToFlightsList(self):
     self.__app.openFlightsListView()
-
-
-  

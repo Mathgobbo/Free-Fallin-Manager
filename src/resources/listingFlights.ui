@@ -103,7 +103,7 @@
      <string>LUGARES DISPONÍVEIS</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="addMemberButton">
+   <widget class="QPushButton" name="addFlightButton">
     <property name="geometry">
      <rect>
       <x>540</x>
