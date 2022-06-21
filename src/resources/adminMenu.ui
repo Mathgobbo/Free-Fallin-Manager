@@ -19,7 +19,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="3" column="0">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="voos">
       <property name="minimumSize">
        <size>
         <width>400</width>
@@ -35,7 +35,6 @@
       <property name="font">
        <font>
         <pointsize>11</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -65,7 +64,6 @@ background-color: rgb(68, 165, 255)</string>
       <property name="font">
        <font>
         <pointsize>11</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -95,7 +93,6 @@ background-color: rgb(68, 165, 255)</string>
       <property name="font">
        <font>
         <pointsize>11</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -125,7 +122,6 @@ background-color: rgb(68, 165, 255)</string>
       <property name="font">
        <font>
         <pointsize>11</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -155,7 +151,6 @@ background-color: rgb(68, 165, 255)</string>
       <property name="font">
        <font>
         <pointsize>11</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -185,7 +180,6 @@ background-color: rgb(68, 165, 255)</string>
       <property name="font">
        <font>
         <pointsize>24</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -214,7 +208,6 @@ background-color: rgb(68, 165, 255)</string>
       <property name="font">
        <font>
         <pointsize>11</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
