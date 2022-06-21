@@ -14,7 +14,7 @@ class PlaneListController:
 
     def goToPlaneRegistration(self):
         self.__view.close()
-        #self.__app.openSignUpAdmin()
+        self.__app.openPlaneRegistration()
     
     def getPlanes(self):
         return self.__dao.getAll()

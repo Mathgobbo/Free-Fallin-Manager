@@ -1,6 +1,10 @@
+from src.models.Plane import Plane
+from src.views.planeRegistrationView import PlaneRegistrationView
+from src.dao.planeDao import PlaneDao
+
 class PlaneRegistrationController:
     def __init__(self, app, planeDao) -> None:
-        #self.__view = PlaneRegistrationView(self)
+        self.__view = PlaneRegistrationView(self)
         self.__dao = planeDao
         self.__app = app
 
@@ -11,39 +15,26 @@ class PlaneRegistrationController:
         self.__view.close()
         self.__app.openPlaneList()
 
-    def signUp(self):
-        isValid = self.isFormValid()
-        if(not isValid): 
-            return
-        
-        newAdmin = Admin(self.__view.usernameInput.text(), self.__view.passInput.text())
-        self.__dao.add(self.__view.usernameInput.text(),newAdmin)
-        self.back()
-        self.__view.clearInputs()
+    def register(self, name, model, capacity_limit):
+        if self.isEmpty(name, capacity_limit):
+            if self.exist(name, model, capacity_limit):
+                self.__view.invalidName()
+            else:
+                newPlane = Plane(name, model, capacity_limit)
+                self.__dao.add(name, newPlane)
+                self.back()
+                self.__view.clearInputs()
+        else:
+            self.__view.emptyName()
 
-    def isFormValid(self): 
-        isValid = True
-        self.__view.usernameError.setText("")
-        self.__view.passError.setText("")
-        self.__view.confirmPassError.setText("")
-        
-        if(self.__view.usernameInput.text() == ""):
-            self.__view.usernameError.setText("Insira um Nome de Usuário")
-            isValid =  False
-        if(self.__view.passInput.text() == ""):
-            self.__view.passError.setText("Insira uma Senha")
-            isValid =  False
-        if(self.__view.confirmPassInput.text() == ""):
-            self.__view.confirmPassError.setText("Confirme a senha informada")
-            isValid =  False
-        if(self.__view.confirmPassInput.text() != self.__view.passInput.text()):
-            self.__view.confirmPassError.setText("Confirmação de Senha está diferente da senha informada")
-            isValid =  False
+    # Verifica se os campos obrigatórios estão vazios
+    def isEmpty(self, name, capacity_limit):
+        if name != "" and capacity_limit != "":
+            return True
+        return False
 
-        admins = self.__dao.getAll()
-        for admin in admins:
-            if admin.username ==  self.__view.usernameInput.text():
-                self.__view.usernameError.setText("Já existe um Administrador com este nome de Usuário!")
-                isValid =  False
-                break
-            return isValid
+    def exist(self, name, model, capacity_limit): 
+        planes = self.__dao.getAll()
+        for plane in planes:
+            if name == plane.name:
+                return False

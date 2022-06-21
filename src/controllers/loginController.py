@@ -15,19 +15,16 @@ class LoginController:
 
     # Verifica se os campos estão vazios
     def isEmpty(self, username, password):
-        newAdmin = Admin(username, password)
-        if newAdmin.username != "" and newAdmin.password != "":
+        if username != "" and password != "":
             return True
         return False
 
     # Verifica se o login é valido
     def isValidLogin(self, username, password):
         adminListController = self.__controller.adminList
-        newAdmin = Admin(username, password)
         for admin in adminListController.getAdmins():
-            if newAdmin.username == admin.username and newAdmin.password == admin.password:
+            if username == admin.username and password == admin.password:
                 return True
-
 
     # Efetua o login
     def Login(self,username, password):
