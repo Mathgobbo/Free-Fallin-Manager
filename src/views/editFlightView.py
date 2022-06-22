@@ -8,3 +8,6 @@ class EditFlightView(QMainWindow):
         self.__controller = controller
         super(EditFlightView, self).__init__()
         uic.loadUi(r'.\src\resources\editFlight.ui', self)
+    
+    def openEditFlightView(self):
+        self.show()

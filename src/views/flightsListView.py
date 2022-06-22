@@ -10,6 +10,9 @@ class FlightsListView(QMainWindow):
 
         self.__controller = controller
 
+        self.botaoVoltar = self.findChild(QPushButton, "botaoVoltar")
+        self.botaoVoltar.clicked.connect(self.botaoVoltarClick)
+
         self.addFlightButton = self.findChild(QPushButton, "addFlightButton")
         self.addFlightButton.clicked.connect(self.goToAddFlight)
     
@@ -18,3 +21,7 @@ class FlightsListView(QMainWindow):
     
     def goToAddFlight(self):
         self.__controller.goToAddFlight()
+    
+    def botaoVoltarClick(self):
+        self.close()
+        self.__controller.back()

@@ -12,3 +12,6 @@ class FlightsListController:
     
     def goToAddFlight(self):
         self.__app.openFlightRegistrationView()
+    
+    def back(self):
+        self.__app.openAdminMenu()

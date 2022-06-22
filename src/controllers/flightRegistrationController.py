@@ -10,3 +10,6 @@ class FlightRegistrationController:
 
     def openView(self):
         self.__view.show()
+
+    def goToAddMember(self):
+        self.__app.openAddMemberView()
