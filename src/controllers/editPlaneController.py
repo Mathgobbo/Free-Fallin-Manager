@@ -1,30 +1,32 @@
 from src.models.Plane import Plane
-from src.views.planeRegistrationView import PlaneRegistrationView
+from src.views.editPlaneView import EditPlaneView
 from src.dao.planeDao import PlaneDao
 
-class PlaneRegistrationController:
+class EditPlaneController:
     def __init__(self, app, planeDao) -> None:
-        self.__view = PlaneRegistrationView(self)
+        self.__view = EditPlaneView(self)
         self.__dao = planeDao
         self.__app = app
+        self.__selectedPlane = None
 
     # Abre a view
-    def openView(self):
-        self.__view.show()
+    def openView(self, plane):
+        self.__selectedPlane = plane
+        self.__view.openEditPlaneView(plane)
     
     # Volta para lista de aviões
     def back(self):
         self.__view.close()
         self.__app.openPlaneList()
 
-    # Cria o avião e persiste os dados
-    def register(self, name, model, capacity_limit):
+    # Atualiza o avião e persiste os dados
+    def update(self, name, model, capacity_limit):
         if self.isEmpty(name, capacity_limit):
             if self.exist(name, model, capacity_limit):
                 self.__view.invalidName()
             else:
                 newPlane = Plane(name, model, capacity_limit)
-                self.__dao.add(name, newPlane)
+                self.__dao.update(self.__selectedPlane.name, newPlane)
                 self.back()
                 self.__view.clearInputs()
         else:

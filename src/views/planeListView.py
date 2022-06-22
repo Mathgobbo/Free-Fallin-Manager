@@ -15,7 +15,8 @@ class PlaneListView(QMainWindow):
         self.addPlaneButton = self.findChild(QPushButton, "addPlaneButton")
         self.addPlaneButton.clicked.connect(self.openPlaneRegistration)
         self.table = self.findChild(QTableWidget, "planesTable")
-        self.table.setColumnWidth(0,300)
+        self.table.setColumnWidth(3,30)
+
 
 
     def showEvent(self, ev: QShowEvent) -> None:
@@ -35,12 +36,16 @@ class PlaneListView(QMainWindow):
         self.table.setRowCount(len(planes))
         for plane in planes:
             nameColumn = QLabel(plane.name)
+            modelColumn = QLabel(plane.model)
+            capacityColumn = QLabel(plane.capacity_limit)
             nameColumn.mousePressEvent = self.openEditPlane(plane)
             self.table.setCellWidget(row, 0, nameColumn)
+            self.table.setCellWidget(row, 1, modelColumn)
+            self.table.setCellWidget(row, 2, capacityColumn)
             button = QToolButton()
             button.setIcon(QIcon("./src/resources/trashIcon.png"))
             button.clicked.connect(self.deleteGenerator(plane))
-            self.table.setCellWidget(row, 1, button)
+            self.table.setCellWidget(row, 3, button)
             row = row + 1
     
     def deleteGenerator(self, plane):

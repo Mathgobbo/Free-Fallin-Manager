@@ -12,7 +12,7 @@ class PlaneDao(AbstractDAO):
 
     def add(self, name, plane):
         if (plane is not None) and (isinstance(plane, Plane) and (isinstance(name, str))):
-            return super().add(name, Plane)
+            return super().add(name, plane)
 
     def remove(self, key):
         if isinstance(key, str):

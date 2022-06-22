@@ -125,7 +125,7 @@ background-color: rgb(68, 165, 255)</string>
      </rect>
     </property>
     <property name="columnCount">
-     <number>3</number>
+     <number>4</number>
     </property>
     <attribute name="horizontalHeaderDefaultSectionSize">
      <number>100</number>
@@ -164,6 +164,11 @@ background-color: rgb(68, 165, 255)</string>
        <weight>75</weight>
        <bold>true</bold>
       </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string/>
      </property>
     </column>
    </widget>

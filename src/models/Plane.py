@@ -1,7 +1,7 @@
 
 
 class Plane:
-  def __init__(self, capacity_limit: int, model: str, name:str ) -> None:
+  def __init__(self, name: int, model: str, capacity_limit:str ) -> None:
     self.__capacity_limit = capacity_limit
     self.__model = model
     self.__name = name

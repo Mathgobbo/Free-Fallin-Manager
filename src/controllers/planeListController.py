@@ -24,4 +24,4 @@ class PlaneListController:
     
     def editPlane(self, plane):
         self.__view.close()
-        #self.__app.openEditAdmin(plane)
+        self.__app.openEditPlane(plane)
