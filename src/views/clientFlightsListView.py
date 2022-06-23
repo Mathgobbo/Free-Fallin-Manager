@@ -26,7 +26,7 @@ class ClientFlightsListView(QMainWindow):
     def loadData(self):
         row = 0
         flights =  self.__controller.getFlights()
-        print(flights)
+        # MOCKS! TEM QUE TROCAR MAIS TARDE
         mockedFlights = [
             Fly("15-07-2020 08:15:00", [], Plane("Roger Santos", "Patata", 1)),
             Fly("10-03-2002 18:15:00", [], Plane("Maçarico 1", "Patata", 4))

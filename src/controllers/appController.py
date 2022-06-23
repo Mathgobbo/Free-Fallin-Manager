@@ -1,6 +1,8 @@
 
 
 from PyQt5.QtWidgets import QApplication
+from src.dao.flyingRequestDao import FlyingRequestDAO
+from src.controllers.clientFlightSuccessController import ClientFlightSuccessController
 from src.controllers.clientFlightsSignUpController import ClientFlightsSignUpController
 from src.controllers.clientFlightsListController import ClientFlightsListController
 from src.dao.flightDao import FlightDao
@@ -31,6 +33,7 @@ class AppController:
     self.__planeDao = PlaneDao()
     self.__flyMemberDao = FlyingMemberDAO()
     self.__flightDao = FlightDao()
+    self.__flyingRequestDao = FlyingRequestDAO()
 
     # CONTROLLERS
     self.__mainMenuController = MainMenuController(self)
@@ -48,8 +51,9 @@ class AppController:
     self.__editPlaneController = EditPlaneController(self, self.__planeDao)
     self.__editFlightController = EditFlightController(self)
     self.__clientFlightsController = ClientFlightsListController(self, self.__flightDao)
-    self.__clientSignUpToFlightController = ClientFlightsSignUpController(self,self.__flyMemberDao)
-  
+    self.__clientSignUpToFlightController = ClientFlightsSignUpController(self,self.__flyMemberDao, self.__flyingRequestDao)
+    self.__clientFlightSuccessController = ClientFlightSuccessController(self)
+
   def start(self):
     self.__mainMenuController.openView()
     self.__app.exec_()
@@ -62,6 +66,9 @@ class AppController:
   
   def openClientSignUpToFlight(self, flight):
     self.__clientSignUpToFlightController.openView(flight);
+
+  def openClientFlightSuccessPage(self):
+    self.__clientFlightSuccessController.openView()
 
   def openSignUpAdmin(self):
     self.__signUpAdminController.openView()
