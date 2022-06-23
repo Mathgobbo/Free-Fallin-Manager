@@ -11,6 +11,8 @@ class MainMenuView(QMainWindow):
         self.loginAdminButton = self.findChild(QPushButton,"botaoLogin")
         self.loginAdminButton.clicked.connect(self.goToSignIn)
     
+        self.wannaFlyButton = self.findChild(QPushButton,"botaoSaltar")
+        self.wannaFlyButton.clicked.connect(self.gotToFlightsToBook)
 
     def openView(self):
         self.show()
@@ -19,6 +21,10 @@ class MainMenuView(QMainWindow):
     def goToSignIn(self):
         self.close()
         self.__controller.goToSignInAdmin()
+    
+    def gotToFlightsToBook(self):
+        self.close();
+        self.__controller.goToFlightsToBook();
     
     
     

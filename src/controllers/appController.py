@@ -1,6 +1,8 @@
 
 
 from PyQt5.QtWidgets import QApplication
+from src.controllers.clientFlightsListController import ClientFlightsListController
+from src.dao.flightDao import FlightDao
 from src.dao.planeDao import PlaneDao
 from src.controllers.planeListController import PlaneListController
 from src.controllers.planeRegistrationController import PlaneRegistrationController
@@ -25,6 +27,7 @@ class AppController:
     # DAOs
     self.__adminDao = AdminDao()
     self.__planeDao = PlaneDao()
+    self.__flightDao = FlightDao()
 
     # CONTROLLERS
     self.__mainMenuController = MainMenuController(self)
@@ -41,10 +44,17 @@ class AppController:
     self.__flightRegistrationController = FlightRegistrationController(self)
     self.__editPlaneController = EditPlaneController(self, self.__planeDao)
     self.__editFlightController = EditFlightController(self)
+    self.__clientFlightsController = ClientFlightsListController(self, self.__flightDao)
   
   def start(self):
     self.__mainMenuController.openView()
     self.__app.exec_()
+
+  def openMainMenu(self):
+    self.__mainMenuController.openView()
+  
+  def openFlightsToBook(self):
+    self.__clientFlightsController.openView()
 
   def openSignUpAdmin(self):
     self.__signUpAdminController.openView()

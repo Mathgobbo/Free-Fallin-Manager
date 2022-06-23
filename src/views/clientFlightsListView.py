@@ -1,7 +1,8 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QLineEdit, QPushButton, QLabel, QTableWidget, QTableWidgetItem, QToolButton
 from PyQt5.QtGui import QIcon, QShowEvent
-
+from src.models.Plane import Plane
+from src.models.Fly import Fly
 
 class ClientFlightsListView(QMainWindow):
     
@@ -13,7 +14,6 @@ class ClientFlightsListView(QMainWindow):
         self.backButton = self.findChild(QPushButton, "backButton")
         self.backButton.clicked.connect(self.backButtonClick)
         self.table = self.findChild(QTableWidget, "tableWidget")
-        self.table.setColumnWidth(3,30)
 
     def showEvent(self, ev: QShowEvent) -> None:
         self.loadData()
@@ -26,11 +26,17 @@ class ClientFlightsListView(QMainWindow):
     def loadData(self):
         row = 0
         flights =  self.__controller.getFlights()
-        self.table.setRowCount(len(flights))
-        for flight in flights:
-            dateTimeColumn = QLabel(flight.date_time)
+        print(flights)
+        mockedFlights = [
+            Fly("10-03-2002 18:15:00", [], Plane("Maçarico 1", "Patata", 4))
+        ]
+        self.table.setRowCount(len(mockedFlights))
+        self.table.setColumnWidth(2,100)
+
+        for flight in mockedFlights:
+            dateTimeColumn = QLabel(str(flight.date_time))
             planeColumn = QLabel(flight.plane.name)
-            capacityColumn = QLabel(flight.plane.capacity_limit - len(flight.members))
+            capacityColumn = QLabel(str(flight.plane.capacity_limit - len(flight.members)))
             dateTimeColumn.mousePressEvent = self.nextStep(flight)
             self.table.setCellWidget(row, 0, dateTimeColumn)
             self.table.setCellWidget(row, 1, planeColumn)

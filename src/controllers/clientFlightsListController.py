@@ -13,8 +13,8 @@ class ClientFlightsListController:
     def openView(self):
         self.__view.show()
 
-    def goToAddMember(self):
-        self.__app.openAddMemberView()
+    def back(self):
+        self.__app.openMainMenu()
 
     def getFlights(self):
         return self.__flightsDao.getAll();
