@@ -1,6 +1,6 @@
 
 from src.dao.adminDao import AdminDao
-from src.models.Administrator import Admin
+from src.models.Admin import Admin
 from src.views.editAdminView import EditAdminView
 
 

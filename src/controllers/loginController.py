@@ -1,5 +1,5 @@
 from gettext import NullTranslations
-from src.models.Administrator import Admin
+from src.models.Admin import Admin
 from src.views.loginView import LoginView
 from src.controllers.AdminListController import AdminListController
 
