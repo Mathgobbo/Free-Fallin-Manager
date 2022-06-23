@@ -17,7 +17,21 @@ class FlightRegistrationView(QMainWindow):
 
         self.timeInput = self.findChild(QTimeEdit, "timeInput")
 
+        self.planeComboBox = self.findChild(QComboBox, "planeComboBox")
+
+        self.membersComboBox = self.findChild(QComboBox, "membersComboBox")
+
+    def showEvent(self, ev):
+
+        self.planeComboBox.clear()
+        for i in self.__controller.getPlanes():
+            self.planeComboBox.addItem(i.name)
         
+        self.membersComboBox.clear()
+        for j in self.__controller.getFlyMembers():
+            self.membersComboBox.addItem(j.name, j.type)
+
+        return super(FlightRegistrationView, self).showEvent(ev)
     
     def openFlightRegistrationView(self):
         self.show()
