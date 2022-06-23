@@ -11,7 +11,10 @@ class MainMenuController:
 
   def openView(self):
     self.__view.openView()
-
+  
+  def goToFlightsToBook(self):
+    self.__app.openFlightsToBook()
+    
   def goToSignInAdmin(self):
     self.__app.openLoginView()
 
