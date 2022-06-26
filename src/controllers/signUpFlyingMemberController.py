@@ -30,8 +30,8 @@ class SignUpFlyingMemberController:
         self.back()
     
     def back(self):
-        self.__app.openFlyingMembersListView()
         self.__view.close()
+        self.__app.openFlyingMembersListView()
 
     def isFormValid(self):
         isValid = True

@@ -11,3 +11,6 @@ class FlyingMembersMenuController:
 
     def goToAddMember(self):
         self.__app.openAddMemberView()
+    
+    def back(self):
+        self.__app.openAdminMenu()

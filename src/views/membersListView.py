@@ -9,12 +9,19 @@ class MembersListView(QMainWindow):
         super(MembersListView, self).__init__()
         uic.loadUi(r'.\src\resources\listingMembers.ui', self)
         self.__controller = controller
+
         self.addMemberButton = self.findChild(QPushButton, "addMemberButton")
         self.addMemberButton.clicked.connect(self.goToAddMember)
 
-    
+        self.voltar = self.findChild(QPushButton, "voltar")
+        self.voltar.clicked.connect(self.voltarClick)
+
     def openView(self):
         self.show()
     
     def goToAddMember(self):
         self.__controller.goToAddMember()
+    
+    def voltarClick(self):
+        self.close()
+        self.__controller.back()

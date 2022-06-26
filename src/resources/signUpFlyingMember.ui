@@ -32,7 +32,7 @@
      <string>Cadastre Membro de Voo</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="voltarBotao">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -62,7 +62,6 @@
     <property name="font">
      <font>
       <pointsize>8</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -112,7 +111,6 @@
     <property name="font">
      <font>
       <pointsize>8</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -142,7 +140,6 @@
     <property name="font">
      <font>
       <pointsize>8</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -172,7 +169,6 @@
     <property name="font">
      <font>
       <pointsize>8</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -202,7 +198,6 @@
     <property name="font">
      <font>
       <pointsize>8</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -222,7 +217,6 @@
     <property name="font">
      <font>
       <pointsize>8</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -241,7 +235,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -347,7 +340,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

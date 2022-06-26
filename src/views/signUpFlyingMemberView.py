@@ -29,6 +29,9 @@ class SignUpFlyingMemberView(QMainWindow):
         self.signUpButton = self.findChild(QPushButton, "cadastrar")
         self.signUpButton.clicked.connect(self.signUp)
 
+        self.voltarBotao = self.findChild(QPushButton, "voltarBotao")
+        self.voltarBotao.clicked.connect(self.voltarBotaoClick)
+
 
     def openSignUpFlyingMemberView(self):
         self.show()
@@ -36,3 +39,7 @@ class SignUpFlyingMemberView(QMainWindow):
     # Chamada do Sign Up do Controller, pois essa é atribuição dele
     def signUp(self):
         self.__controller.signUp()
+    
+    def voltarBotaoClick(self):
+        self.close()
+        self.__controller.back()
