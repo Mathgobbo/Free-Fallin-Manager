@@ -20,13 +20,13 @@ class PlaneRegistrationView(QMainWindow):
         self.emptyError = self.findChild(QLabel, "emptyError")
 
         self.registerButton = self.findChild(QPushButton, "registerButton")
-        self.registerButton.clicked.connect(self.register)
+        self.registerButton.clicked.connect(self.registerButtonClick)
 
         self.backButton = self.findChild(QPushButton, "backButton")
         self.backButton.clicked.connect(self.backButtonClick)
 
     # Chama o controlador e passa os valores dos campos de texto
-    def register(self):
+    def registerButtonClick(self):
         self.nameError.setText("")
         self.emptyError.setText("")
         self.__controller.register(self.nameInput.text(), self.modelInput.text(), self.capacityInput.text())
