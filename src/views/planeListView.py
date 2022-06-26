@@ -44,11 +44,11 @@ class PlaneListView(QMainWindow):
             self.table.setCellWidget(row, 2, capacityColumn)
             button = QToolButton()
             button.setIcon(QIcon("./src/resources/trashIcon.png"))
-            button.clicked.connect(self.deleteGenerator(plane))
+            button.clicked.connect(self.deleteButtonClick(plane))
             self.table.setCellWidget(row, 3, button)
             row = row + 1
     
-    def deleteGenerator(self, plane):
+    def deleteButtonClick(self, plane):
         def delete():
             self.__controller.deletePlane(plane.name)
             self.loadData()
