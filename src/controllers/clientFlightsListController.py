@@ -18,3 +18,6 @@ class ClientFlightsListController:
 
     def getFlights(self):
         return self.__flightsDao.getAll();
+    
+    def nextStep(self, flight):
+        self.__app.openClientSignUpToFlight(flight)

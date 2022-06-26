@@ -12,16 +12,17 @@ class EditPlaneView(QMainWindow):
         self.nameError = self.findChild(QLabel, "nameError")
         self.modelInput = self.findChild(QLineEdit, "model")
         self.capacityInput = self.findChild(QLineEdit, "capacity")
+        self.capacityInput.setInputMask("0009")
         self.emptyError = self.findChild(QLabel, "emptyError")
 
         self.saveButton = self.findChild(QPushButton, "saveButton")
-        self.saveButton.clicked.connect(self.save)
+        self.saveButton.clicked.connect(self.saveButtonClick)
 
         self.backButton = self.findChild(QPushButton, "backButton")
         self.backButton.clicked.connect(self.backButtonClick)
         
     # Chama o controlador e passa os valores dos campos de texto
-    def save(self):
+    def saveButtonClick(self):
         self.nameError.setText("")
         self.emptyError.setText("")
         self.__controller.update(self.nameInput.text(), self.modelInput.text(), self.capacityInput.text())

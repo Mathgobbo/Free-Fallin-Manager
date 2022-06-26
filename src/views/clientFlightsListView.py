@@ -26,14 +26,23 @@ class ClientFlightsListView(QMainWindow):
     def loadData(self):
         row = 0
         flights =  self.__controller.getFlights()
-        print(flights)
+        # MOCKS! TEM QUE TROCAR MAIS TARDE
         mockedFlights = [
+            Fly("15-07-2020 08:15:00", [], Plane("Roger Santos", "Patata", 1)),
             Fly("10-03-2002 18:15:00", [], Plane("Maçarico 1", "Patata", 4))
         ]
-        self.table.setRowCount(len(mockedFlights))
-        self.table.setColumnWidth(2,100)
 
+        flightsToShow = []
         for flight in mockedFlights:
+            if flight.plane.capacity_limit > len(flight.members):
+                flightsToShow.append(flight)
+
+        self.table.setRowCount(len(flightsToShow))
+        self.table.setColumnWidth(0,130)
+        self.table.setColumnWidth(1,180)
+        self.table.setColumnWidth(2,200)
+
+        for flight in flightsToShow:
             dateTimeColumn = QLabel(str(flight.date_time))
             planeColumn = QLabel(flight.plane.name)
             capacityColumn = QLabel(str(flight.plane.capacity_limit - len(flight.members)))
@@ -47,5 +56,6 @@ class ClientFlightsListView(QMainWindow):
     
     def nextStep(self, flight):
         def editPlane(event):
+            self.close()
             self.__controller.nextStep(flight)
         return editPlane
