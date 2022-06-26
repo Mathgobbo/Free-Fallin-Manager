@@ -21,6 +21,7 @@ class PlaneListController:
 
     def deletePlane(self, name):
         self.__dao.remove(name)
+        self.__view.loadData()
     
     def editPlane(self, plane):
         self.__view.close()

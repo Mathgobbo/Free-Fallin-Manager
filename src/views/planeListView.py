@@ -51,7 +51,6 @@ class PlaneListView(QMainWindow):
     def deleteButtonClick(self, plane):
         def delete():
             self.__controller.deletePlane(plane.name)
-            self.loadData()
         return delete
     
     def openEditPlane(self, plane):
