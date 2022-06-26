@@ -39,6 +39,7 @@
     <property name="font">
      <font>
       <pointsize>18</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -58,6 +59,7 @@
     <property name="font">
      <font>
       <pointsize>10</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -77,6 +79,7 @@
     <property name="font">
      <font>
       <pointsize>10</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -96,6 +99,7 @@
     <property name="font">
      <font>
       <pointsize>10</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -130,6 +134,26 @@
       <height>192</height>
      </rect>
     </property>
+    <column>
+     <property name="text">
+      <string>DATA E HORA</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>AVIÃO</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>LUGARES DISPONÍVEIS</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string/>
+     </property>
+    </column>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -138,7 +162,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
