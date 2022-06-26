@@ -12,6 +12,7 @@ class EditPlaneView(QMainWindow):
         self.nameError = self.findChild(QLabel, "nameError")
         self.modelInput = self.findChild(QLineEdit, "model")
         self.capacityInput = self.findChild(QLineEdit, "capacity")
+        self.capacityInput.setInputMask("0009")
         self.emptyError = self.findChild(QLabel, "emptyError")
 
         self.saveButton = self.findChild(QPushButton, "saveButton")
