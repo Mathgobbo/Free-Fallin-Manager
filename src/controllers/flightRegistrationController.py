@@ -34,7 +34,12 @@ class FlightRegistrationController:
         return self.__flyMembers
 
     def flightRegistrationSubmit(self):
-        newFlight = Fly(self.__view.dateTimeEditInput.dateTime(), self.__flyMembers, self.__view.planeComboBox.currentText())
+        selectedPlane = None
+        for plane in self.getPlanes():
+            if self.__view.planeComboBox.currentText() == plane.name: 
+                selectedPlane = plane
+
+        newFlight = Fly(self.__view.dateTimeEditInput.dateTime(), self.__flyMembers, selectedPlane)
         self.__flightDao.add(str(self.__view.dateTimeEditInput.dateTime()), newFlight)
         print(newFlight)
         self.back()

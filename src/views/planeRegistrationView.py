@@ -29,7 +29,7 @@ class PlaneRegistrationView(QMainWindow):
     def registerButtonClick(self):
         self.nameError.setText("")
         self.emptyError.setText("")
-        self.__controller.register(self.nameInput.text(), self.modelInput.text(), self.capacityInput.text())
+        self.__controller.register(self.nameInput.text(), self.modelInput.text(), int(self.capacityInput.text()))
 
     # Abre a tela
     def openPlaneRegistrationView(self):

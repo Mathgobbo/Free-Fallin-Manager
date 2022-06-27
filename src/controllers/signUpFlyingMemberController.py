@@ -3,10 +3,10 @@ from src.views.signUpFlyingMemberView import SignUpFlyingMemberView
 from src.dao.flyingMemberDao import FlyingMemberDAO
 
 class SignUpFlyingMemberController:
-    def __init__(self, app) -> None:
+    def __init__(self, app, flyingMemberDao) -> None:
         self.__app = app
         self.__view = SignUpFlyingMemberView(self)
-        self.__flyingMemberDAO = FlyingMemberDAO()
+        self.__flyingMemberDAO = flyingMemberDao
 
     def openView(self):
         self.__view.show()

@@ -45,7 +45,7 @@ class AppController:
     self.__loginController = LoginController(self)
     # self.__flyingMembersController = FlyingMembersMenuController(self, self.__flyMemberDao)
     self.__membersListController = MembersListController(self, self.__flyMemberDao)
-    self.__signUpFlyingMemberController = SignUpFlyingMemberController(self)
+    self.__signUpFlyingMemberController = SignUpFlyingMemberController(self, self.__flyMemberDao)
     self.__planeListController = PlaneListController(self, self.__planeDao)
     self.__planeRegistrationController = PlaneRegistrationController(self, self.__planeDao)
     self.__flightsListController = FlightsListController(self, self.__flightDao)

@@ -40,12 +40,12 @@ class FlightsListView(QMainWindow):
             dateTime = QLabel(str(flight.date_time))
             self.flightsTable.setCellWidget(row, 0, dateTime)
             dateTime.mousePressEvent = self.openEditFlight(flight)
-            
-            plane = QLabel(flight.plane)
+            print(flight.plane)
+            plane = QLabel(flight.plane.name)
             self.flightsTable.setCellWidget(row, 1, plane)
   
-            freePlaces = QLabel("5")
-            self.flightsTable.setCellWidget(row, 2, freePlaces)
+            capacityColumn = QLabel(str(flight.plane.capacity_limit - len(flight.members)))
+            self.flightsTable.setCellWidget(row, 2, capacityColumn)
             
             botao = QToolButton()
             botao.setIcon(QIcon("./src/resources/trashIcon.png"))
