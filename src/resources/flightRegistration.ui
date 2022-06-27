@@ -212,11 +212,11 @@
       <height>51</height>
      </rect>
     </property>
-    <row>
+    <column>
      <property name="text">
       <string>Piloto</string>
      </property>
-    </row>
+    </column>
    </widget>
    <widget class="QTableWidget" name="tableInstrutores">
     <property name="geometry">
@@ -227,11 +227,11 @@
       <height>61</height>
      </rect>
     </property>
-    <row>
+    <column>
      <property name="text">
       <string>Instrutores</string>
      </property>
-    </row>
+    </column>
    </widget>
    <widget class="QTableWidget" name="tableAlunos">
     <property name="geometry">
@@ -242,11 +242,11 @@
       <height>61</height>
      </rect>
     </property>
-    <row>
+    <column>
      <property name="text">
       <string>Alunos</string>
      </property>
-    </row>
+    </column>
    </widget>
    <widget class="QTableWidget" name="tablePassageiros">
     <property name="geometry">
@@ -257,11 +257,11 @@
       <height>51</height>
      </rect>
     </property>
-    <row>
+    <column>
      <property name="text">
       <string>Passageiros</string>
      </property>
-    </row>
+    </column>
    </widget>
    <widget class="QDateTimeEdit" name="dateTimeInput">
     <property name="geometry">
@@ -271,6 +271,19 @@
       <width>281</width>
       <height>22</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="botaoVoltar">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>10</y>
+      <width>81</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Voltar</string>
     </property>
    </widget>
   </widget>

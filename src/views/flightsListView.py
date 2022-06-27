@@ -34,24 +34,37 @@ class FlightsListView(QMainWindow):
     def loadData(self):
         row = 0
         flights = self.__controller.getFlights()
-        print(len(flights))
         self.flightsTable.setRowCount(len(flights))
 
         for flight in flights:
             dateTime = QLabel(str(flight.date_time))
             self.flightsTable.setCellWidget(row, 0, dateTime)
+            dateTime.mousePressEvent = self.openEditFlight(flight)
             
             plane = QLabel(flight.plane)
             self.flightsTable.setCellWidget(row, 1, plane)
   
-            freePlaces = QLabel("3")
+            freePlaces = QLabel("5")
             self.flightsTable.setCellWidget(row, 2, freePlaces)
             
             botao = QToolButton()
             botao.setIcon(QIcon("./src/resources/trashIcon.png"))
+            botao.clicked.connect(self.deleteButtonClick(flight))
             self.flightsTable.setCellWidget(row, 3, botao)
             row = row + 1
     
     def showEvent(self, ev: QShowEvent) -> None:
         self.loadData()
         return super(FlightsListView, self).showEvent(ev)
+    
+    def openEditFlight(self, flight):
+        def editFlight(event):
+            self.__controller.editarVoo(flight)
+        return editFlight
+
+    def deleteButtonClick(self, flight):
+        def delete():
+            self.__controller.deleteFlight(str(flight.date_time))
+            self.loadData()
+        return delete
+    

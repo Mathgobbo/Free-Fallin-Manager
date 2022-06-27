@@ -10,6 +10,9 @@ class FlightRegistrationView(QMainWindow):
         uic.loadUi(r'.\src\resources\flightRegistration.ui', self)
         self.__controller = controller
 
+        self.botaoVoltar = self.findChild(QPushButton, "botaoVoltar")
+        self.botaoVoltar.clicked.connect(self.botaoVoltarClick)
+
         self.tablePiloto = self.findChild(QTableWidget, "tablePiloto")
         self.tableInstrutores = self.findChild(QTableWidget, "tableInstrutores")
         self.tableAlunos = self.findChild(QTableWidget, "tableAlunos")
@@ -31,7 +34,6 @@ class FlightRegistrationView(QMainWindow):
         self.flightRegistrationButton.clicked.connect(self.flightRegistrationSubmit)
 
     def showEvent(self, ev):
-
         self.planeComboBox.clear()
         for i in self.__controller.getPlanes():
             self.planeComboBox.addItem(i.name)
@@ -57,14 +59,33 @@ class FlightRegistrationView(QMainWindow):
     def loadData(self):
         membersList = self.__controller.getFlyMembersList()
 
-        self.tablePiloto.setRowCount(1)
+        self.tablePiloto.setRowCount(3)
+        self.tableInstrutores.setRowCount(3)
+        self.tableAlunos.setRowCount(3)
+        self.tablePassageiros.setRowCount(3)
         row = 0
 
         for i in membersList:
             if FlyingMemberTypeEnum(i.type) == FlyingMemberTypeEnum.PILOTO:
                 memberName = QLabel(i.name)
-                print(memberName)
                 self.tablePiloto.setCellWidget(row, 0, memberName)
+            
+            if FlyingMemberTypeEnum(i.type) == FlyingMemberTypeEnum.INSTRUTOR:
+                memberName = QLabel(i.name)
+                self.tableInstrutores.setCellWidget(row, 0, memberName)
+            
+            if FlyingMemberTypeEnum(i.type) == FlyingMemberTypeEnum.ALUNO:
+                memberName = QLabel(i.name)
+                self.tableAlunos.setCellWidget(row, 0, memberName)
+            
+            if FlyingMemberTypeEnum(i.type) == FlyingMemberTypeEnum.PASSAGEIRO:
+                memberName = QLabel(i.name)
+                self.tablePassageiros.setCellWidget(row, 0, memberName)
 
     def flightRegistrationSubmit(self):
         self.__controller.flightRegistrationSubmit()
+    
+
+    def botaoVoltarClick(self):
+        self.close()
+        self.__controller.goToFlightsList()

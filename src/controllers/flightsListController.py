@@ -20,3 +20,10 @@ class FlightsListController:
     
     def getFlights(self):
         return self.__flightDao.getAll()
+
+    def editarVoo(self, flight):
+        self.__view.close()
+        self.__app.openEditFlight(flight)
+
+    def deleteFlight(self, date_time):
+        self.__flightDao.remove(date_time)

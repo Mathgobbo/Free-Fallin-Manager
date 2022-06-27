@@ -1,7 +1,6 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QLineEdit, QPushButton, QLabel
-
-from src.models.FlyingMember import FlyingMember
+from PyQt5.QtGui import QIcon, QShowEvent
 
 
 class MembersListView(QMainWindow):
@@ -25,3 +24,10 @@ class MembersListView(QMainWindow):
     def voltarClick(self):
         self.close()
         self.__controller.back()
+    
+    def loadData(self):
+        flyMembers = self.__controller.getMembers()
+    
+    def showEvent(self, ev: QShowEvent) -> None:
+        self.loadData()
+        return super(MembersListView, self).showEvent(ev)
