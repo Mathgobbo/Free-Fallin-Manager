@@ -1,5 +1,5 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import QLineEdit, QLabel, QMainWindow, QComboBox, QPushButton, QSpinBox, QTableWidget
+from PyQt5.QtWidgets import QLineEdit, QLabel, QMainWindow, QComboBox, QPushButton, QSpinBox, QTableWidget, QDateTimeEdit
 from src.models.Fly import Fly
 from src.models.FlyingMemberTypeEnum import FlyingMemberTypeEnum
 
@@ -10,6 +10,8 @@ class EditFlightView(QMainWindow):
         self.__controller = controller
         super(EditFlightView, self).__init__()
         uic.loadUi(r'.\src\resources\editFlight.ui', self)
+
+        self.dataHoraInput = self.findChild(QDateTimeEdit, "dataHora")
 
         self.salvarBotao = self.findChild(QPushButton, "salvarBotao")
         self.salvarBotao.clicked.connect(self.salvarVooClick)
@@ -24,7 +26,8 @@ class EditFlightView(QMainWindow):
         self.tableInstrutores = self.findChild(QTableWidget, "tableInstrutores")
         self.tableAlunos = self.findChild(QTableWidget, "tableAlunos")
         self.tablePassageiros = self.findChild(QTableWidget, "tablePassageiros")
-    
+
+
     def showEvent(self, ev):
         self.planeComboBox.clear()
 

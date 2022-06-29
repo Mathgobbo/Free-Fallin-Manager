@@ -41,7 +41,6 @@ class FlightRegistrationController:
 
         newFlight = Fly(self.__view.dateTimeEditInput.dateTime(), self.__flyMembers, selectedPlane)
         self.__flightDao.add(str(self.__view.dateTimeEditInput.dateTime()), newFlight)
-        print(newFlight)
         self.back()
     
     def goToFlightsList(self):

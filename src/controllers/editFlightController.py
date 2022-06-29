@@ -34,3 +34,17 @@ class EditFlightController:
     
     def getFlyMembersList(self):
         return self.__flyMembers
+
+    def atualizarVoo(self):
+        selectedPlane = None
+        for plane in self.getPlanes():
+            if self.__view.planeComboBox.currentText() == plane.name: 
+                selectedPlane = plane
+
+        newFlight = Fly(self.__view.dataHoraInput.dateTime(), self.__flyMembers, selectedPlane)
+        self.__flightDao.add(str(self.__view.dataHoraInput.dateTime()), newFlight)
+        self.back()
+
+    def back(self):
+        self.__view.close()
+        self.__app.openFlightsListView()
