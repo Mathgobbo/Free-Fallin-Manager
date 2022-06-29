@@ -84,7 +84,10 @@ class FlightRegistrationView(QMainWindow):
 
     def flightRegistrationSubmit(self):
         self.__controller.flightRegistrationSubmit()
-    
+        self.tablePiloto.setRowCount(0)
+        self.tableAlunos.setRowCount(0)
+        self.tableInstrutores.setRowCount(0)
+        self.tablePassageiros.setRowCount(0)
 
     def botaoVoltarClick(self):
         self.close()
