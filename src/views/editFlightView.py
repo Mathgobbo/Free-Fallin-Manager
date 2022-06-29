@@ -1,5 +1,6 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QLineEdit, QLabel, QMainWindow, QComboBox, QPushButton, QSpinBox
+from src.models.Fly import Fly
 
 
 class EditFlightView(QMainWindow):
@@ -9,17 +10,17 @@ class EditFlightView(QMainWindow):
         super(EditFlightView, self).__init__()
         uic.loadUi(r'.\src\resources\editFlight.ui', self)
 
-        self.salvarBotao = self.findChild(QPushButton, "salvarVoo")
-        # self.salvarBotao.clicked.connect(self.salvarVooClick)
+        self.salvarBotao = self.findChild(QPushButton, "salvarBotao")
+        self.salvarBotao.clicked.connect(self.salvarVooClick)
 
         self.voltarBotao = self.findChild(QPushButton, "voltarBotao")
         self.voltarBotao.clicked.connect(self.voltarBotaoClick)
 
-    def openEditFlightView(self):
+    def openEditFlightView(self, flight):
         self.show()
     
     def salvarVooClick(self):
-        pass
+        self.__controller.atualizarVoo()
 
     def voltarBotaoClick(self):
         self.close()

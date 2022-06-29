@@ -109,7 +109,7 @@
      <string>SELECIONE O AVIÃO</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="editar">
+   <widget class="QPushButton" name="salvarBotao">
     <property name="geometry">
      <rect>
       <x>260</x>
@@ -169,21 +169,6 @@
       <height>31</height>
      </rect>
     </property>
-    <item>
-     <property name="text">
-      <string>Vinicius Antunes</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Mateus Gobbo</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Felipe Neves</string>
-     </property>
-    </item>
    </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">

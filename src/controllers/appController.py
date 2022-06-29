@@ -51,7 +51,7 @@ class AppController:
     self.__flightsListController = FlightsListController(self, self.__flightDao)
     self.__flightRegistrationController = FlightRegistrationController(self, self.__planeDao, self.__flyMemberDao, self.__flightDao)
     self.__editPlaneController = EditPlaneController(self, self.__planeDao)
-    self.__editFlightController = EditFlightController(self)
+    self.__editFlightController = EditFlightController(self, self.__flightDao)
     self.__clientFlightsController = ClientFlightsListController(self, self.__flightDao)
     self.__clientSignUpToFlightController = ClientFlightsSignUpController(self,self.__flyMemberDao, self.__flyingRequestDao)
     self.__clientFlightSuccessController = ClientFlightSuccessController(self)
@@ -109,7 +109,7 @@ class AppController:
     self.__editPlaneController.openView(plane)
   
   def openEditFlight(self, flight):
-    self.__editFlightController.openView()
+    self.__editFlightController.openView(flight)
 
   @property
   def adminList(self):
