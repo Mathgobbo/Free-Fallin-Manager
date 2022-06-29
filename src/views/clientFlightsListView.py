@@ -33,7 +33,7 @@ class ClientFlightsListView(QMainWindow):
         ]
 
         flightsToShow = []
-        for flight in mockedFlights:
+        for flight in flights:
             if flight.plane.capacity_limit > len(flight.members):
                 flightsToShow.append(flight)
 
@@ -43,7 +43,7 @@ class ClientFlightsListView(QMainWindow):
         self.table.setColumnWidth(2,200)
 
         for flight in flightsToShow:
-            dateTimeColumn = QLabel(str(flight.date_time))
+            dateTimeColumn = QLabel(str(flight.date_time.toString()))
             planeColumn = QLabel(flight.plane.name)
             capacityColumn = QLabel(str(flight.plane.capacity_limit - len(flight.members)))
             dateTimeColumn.mousePressEvent = self.nextStep(flight)
