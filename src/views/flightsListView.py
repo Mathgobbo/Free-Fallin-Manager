@@ -25,6 +25,7 @@ class FlightsListView(QMainWindow):
         self.show()
     
     def goToAddFlight(self):
+        self.close()
         self.__controller.goToAddFlight()
     
     def botaoVoltarClick(self):
@@ -37,7 +38,7 @@ class FlightsListView(QMainWindow):
         self.flightsTable.setRowCount(len(flights))
 
         for flight in flights:
-            dateTime = QLabel(str(flight.date_time))
+            dateTime = QLabel(str(flight.date_time.toString()))
             self.flightsTable.setCellWidget(row, 0, dateTime)
             dateTime.mousePressEvent = self.openEditFlight(flight)
             print(flight.plane)

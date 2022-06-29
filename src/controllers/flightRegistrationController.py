@@ -50,3 +50,6 @@ class FlightRegistrationController:
     def back(self):
         self.__view.close()
         self.__app.openFlightsListView()
+
+    def isFlightValid(self):
+        pass

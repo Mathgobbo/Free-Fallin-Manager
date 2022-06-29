@@ -51,7 +51,7 @@ class AppController:
     self.__flightsListController = FlightsListController(self, self.__flightDao)
     self.__flightRegistrationController = FlightRegistrationController(self, self.__planeDao, self.__flyMemberDao, self.__flightDao)
     self.__editPlaneController = EditPlaneController(self, self.__planeDao)
-    self.__editFlightController = EditFlightController(self, self.__flightDao)
+    self.__editFlightController = EditFlightController(self, self.__flightDao, self.__planeDao, self.__flyMemberDao)
     self.__clientFlightsController = ClientFlightsListController(self, self.__flightDao)
     self.__clientSignUpToFlightController = ClientFlightsSignUpController(self,self.__flyMemberDao, self.__flyingRequestDao)
     self.__clientFlightSuccessController = ClientFlightSuccessController(self)

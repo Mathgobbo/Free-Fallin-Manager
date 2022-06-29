@@ -51,7 +51,7 @@
      <string>INFORME A DATA E A HORA</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="planeComboBox">
     <property name="geometry">
      <rect>
       <x>260</x>
@@ -60,16 +60,6 @@
       <height>31</height>
      </rect>
     </property>
-    <item>
-     <property name="text">
-      <string>RANGER TERCEIRO</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>TIJUCAS VOADOR</string>
-     </property>
-    </item>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
@@ -140,27 +130,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QDateEdit" name="dateEdit">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>80</y>
-      <width>110</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTimeEdit" name="timeEdit">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>80</y>
-      <width>118</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox_2">
+   <widget class="QComboBox" name="membersComboBox">
     <property name="geometry">
      <rect>
       <x>260</x>
@@ -202,7 +172,7 @@
      <string>Voltar</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="memberAdd">
     <property name="geometry">
      <rect>
       <x>490</x>
@@ -220,7 +190,7 @@
      <string>+</string>
     </property>
    </widget>
-   <widget class="QTableWidget" name="tableWidget">
+   <widget class="QTableWidget" name="tablePiloto">
     <property name="geometry">
      <rect>
       <x>260</x>
@@ -235,7 +205,7 @@
      </property>
     </column>
    </widget>
-   <widget class="QTableWidget" name="tableWidget_2">
+   <widget class="QTableWidget" name="tableInstrutores">
     <property name="geometry">
      <rect>
       <x>260</x>
@@ -250,7 +220,7 @@
      </property>
     </column>
    </widget>
-   <widget class="QTableWidget" name="tableWidget_3">
+   <widget class="QTableWidget" name="tableAlunos">
     <property name="geometry">
      <rect>
       <x>260</x>
@@ -265,7 +235,7 @@
      </property>
     </column>
    </widget>
-   <widget class="QTableWidget" name="tableWidget_4">
+   <widget class="QTableWidget" name="tablePassageiros">
     <property name="geometry">
      <rect>
       <x>260</x>
@@ -279,6 +249,16 @@
       <string>Passageiros</string>
      </property>
     </column>
+   </widget>
+   <widget class="QDateTimeEdit" name="dataHora">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>80</y>
+      <width>271</width>
+      <height>22</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
