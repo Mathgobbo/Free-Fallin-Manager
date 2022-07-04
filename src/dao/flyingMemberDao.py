@@ -8,7 +8,8 @@ class FlyingMemberDAO(AbstractDAO):
         super().__init__('members.pkl')
 
     def get(self, key):
-        if isinstance(key, int):
+        # Mudei para str
+        if isinstance(key, str):
             return super().get(key)
 
     def add(self, cpf, member):
@@ -16,8 +17,14 @@ class FlyingMemberDAO(AbstractDAO):
             return super().add(cpf, member)
 
     def remove(self, key):
-        if isinstance(key, int):
+        # Mudei key para str
+        if isinstance(key, str):
             return super().remove(key)
 
     def getAll(self):
         return super().getAll()
+    
+    def update(self, cpf, member):
+        super().remove(cpf)
+        super().add(member.cpf, cpf)
+        return

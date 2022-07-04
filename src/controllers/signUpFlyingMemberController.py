@@ -5,8 +5,8 @@ from src.dao.flyingMemberDao import FlyingMemberDAO
 class SignUpFlyingMemberController:
     def __init__(self, app, flyingMemberDao) -> None:
         self.__app = app
-        self.__view = SignUpFlyingMemberView(self)
         self.__flyingMemberDAO = flyingMemberDao
+        self.__view = SignUpFlyingMemberView(self)
 
     def openView(self):
         self.__view.show()
@@ -16,18 +16,15 @@ class SignUpFlyingMemberController:
             return True
         return False
     
-    # Principal!
     def signUp(self):
         isValid = self.isFormValid()
-        print(isValid)
         if (not isValid):
             return
         
-        # Ta faltando o tipo
-        # Ver como vem o Tipo la do ComboBox pra adicionar abaixo
         newFlyingMember = FlyingMember(self.__view.cpfInput.text(), self.__view.nameInput.text(), self.__view.phoneInput.text(), self.__view.typeInput.currentText(), self.__view.weightInput.value(), self.__view.heightInput.value())
         self.__flyingMemberDAO.add(self.__view.cpfInput.text(), newFlyingMember)
         self.back()
+        self.__view.clearInputs()
     
     def back(self):
         self.__view.close()
@@ -61,4 +58,12 @@ class SignUpFlyingMemberController:
             self.__view.heightError.setText("Insira sua altura")
             isValid =  False
         
+        
+    
+        members = self.__flyingMemberDAO.getAll()
+        for member in members:
+            if member.cpf == self.__view.cpfInput.text():
+                self.__view.cpfError.setText("Existe um membro já cadastrado com este CPF!")
+                isValid = False
+                break
         return isValid

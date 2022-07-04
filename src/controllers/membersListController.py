@@ -20,3 +20,10 @@ class MembersListController:
     
     def getMembers(self):
         return self.__dao.getAll()
+
+    def deleteMember(self, cpf):
+        self.__dao.remove(cpf)
+
+    def editMember(self, member):
+        self.__view.close()
+        self.__app.openEditMember(member)
