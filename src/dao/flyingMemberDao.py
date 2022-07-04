@@ -26,5 +26,5 @@ class FlyingMemberDAO(AbstractDAO):
     
     def update(self, cpf, member):
         super().remove(cpf)
-        super().add(member.cpf, cpf)
+        super().add(member.cpf, member)
         return

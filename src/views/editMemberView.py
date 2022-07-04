@@ -1,5 +1,6 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import QMainWindow, QLineEdit, QPushButton, QLabel, QSpinBox, QComboBox
+from PyQt5.QtWidgets import (QComboBox, QLabel, QLineEdit, QMainWindow,
+                             QPushButton, QSpinBox)
 from src.models.FlyingMember import FlyingMember
 
 
@@ -41,8 +42,8 @@ class EditMemberView(QMainWindow):
         self.cpfInput.setText(member.cpf)
         self.phoneInput.setText(member.phone)
         self.typeInput.setCurrentText(member.type)
-        # self.weightInput.setValue(member.weight)
-        # self.heightInput.setValue(member.height)
+        self.weightInput.setValue(member.weight)
+        self.heightInput.setValue(member.height)
 
     def backButtonClick(self):
         self.close()
@@ -52,3 +53,5 @@ class EditMemberView(QMainWindow):
         self.nameInput.setText("")
         self.cpfInput.setText("")
         self.phoneInput.setText("")
+        self.weightInput.setValue(0)
+        self.heightInput.setValue(0)
