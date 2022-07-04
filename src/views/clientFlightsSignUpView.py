@@ -42,7 +42,7 @@ class ClientFlightsSignUpView(QMainWindow):
 
     def showEvent(self, ev: QShowEvent) -> None:
         flight = self.__controller.getSelectedFlight()
-        self.flightDetails.setText(str(flight.date_time) + " - " + flight.plane.name + " - " + str(flight.plane.capacity_limit - len(flight.members)))
+        self.flightDetails.setText(str(flight.date_time.toString()) + " - " + flight.plane.name + " - " + str(flight.plane.capacity_limit - len(flight.members)))
         return super(ClientFlightsSignUpView, self).showEvent(ev)
     
     def backButtonClick(self):
