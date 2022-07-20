@@ -1,6 +1,7 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import QLineEdit, QLabel, QMainWindow, QComboBox, QPushButton, QSpinBox, QDateTimeEdit, QTableWidget
+from PyQt5.QtWidgets import QLineEdit, QLabel, QMainWindow, QComboBox, QPushButton, QSpinBox, QDateTimeEdit, QTableWidget, QToolButton
 from src.models.FlyingMemberTypeEnum import FlyingMemberTypeEnum
+from PyQt5.QtGui import QIcon, QShowEvent
 
 
 class FlightRegistrationView(QMainWindow):
@@ -69,6 +70,11 @@ class FlightRegistrationView(QMainWindow):
             if FlyingMemberTypeEnum(i.type) == FlyingMemberTypeEnum.PILOTO:
                 memberName = QLabel(i.name)
                 self.tablePiloto.setCellWidget(row, 0, memberName)
+                deleteButton = QToolButton()
+                deleteButton.setIcon(QIcon("./src/resources/trashIcon.png"))
+                deleteButton.clicked.connect(self.deletePiloto)
+                self.tablePiloto.setCellWidget(row, 1, deleteButton)
+
             
             if FlyingMemberTypeEnum(i.type) == FlyingMemberTypeEnum.INSTRUTOR:
                 memberName = QLabel(i.name)
@@ -92,3 +98,6 @@ class FlightRegistrationView(QMainWindow):
     def botaoVoltarClick(self):
         self.close()
         self.__controller.goToFlightsList()
+    
+    def deletePiloto(self):
+        self.tablePiloto.setRowCount(0)

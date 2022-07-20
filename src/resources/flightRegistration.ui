@@ -217,6 +217,11 @@
       <string>Piloto</string>
      </property>
     </column>
+    <column>
+     <property name="text">
+      <string/>
+     </property>
+    </column>
    </widget>
    <widget class="QTableWidget" name="tableInstrutores">
     <property name="geometry">
@@ -230,6 +235,11 @@
     <column>
      <property name="text">
       <string>Instrutores</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string/>
      </property>
     </column>
    </widget>
@@ -247,6 +257,11 @@
       <string>Alunos</string>
      </property>
     </column>
+    <column>
+     <property name="text">
+      <string/>
+     </property>
+    </column>
    </widget>
    <widget class="QTableWidget" name="tablePassageiros">
     <property name="geometry">
@@ -260,6 +275,11 @@
     <column>
      <property name="text">
       <string>Passageiros</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string/>
      </property>
     </column>
    </widget>

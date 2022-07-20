@@ -41,7 +41,6 @@ class FlightsListView(QMainWindow):
             dateTime = QLabel(str(flight.date_time.toString()))
             self.flightsTable.setCellWidget(row, 0, dateTime)
             dateTime.mousePressEvent = self.openEditFlight(flight)
-            print(flight.plane)
             plane = QLabel(flight.plane.name)
             self.flightsTable.setCellWidget(row, 1, plane)
   
