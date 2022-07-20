@@ -37,7 +37,7 @@ class PlaneListView(QMainWindow):
         for plane in planes:
             nameColumn = QLabel(plane.name)
             modelColumn = QLabel(plane.model)
-            capacityColumn = QLabel(str(plane.capacity_limit))
+            capacityColumn = QLabel(plane.capacity_limit)
             nameColumn.mousePressEvent = self.openEditPlane(plane)
             self.table.setCellWidget(row, 0, nameColumn)
             self.table.setCellWidget(row, 1, modelColumn)

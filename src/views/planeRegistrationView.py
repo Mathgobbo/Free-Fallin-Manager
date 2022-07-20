@@ -15,8 +15,7 @@ class PlaneRegistrationView(QMainWindow):
         self.modelInput = self.findChild(QLineEdit, "model")
 
         self.capacityInput = self.findChild(QLineEdit, "capacity")
-        self.capacityInput.setText("")
-        self.capacityInput.setInputMask("0009")
+        self.capacityInput.setInputMask("99999999")
         self.emptyError = self.findChild(QLabel, "emptyError")
 
         self.registerButton = self.findChild(QPushButton, "registerButton")
@@ -29,7 +28,7 @@ class PlaneRegistrationView(QMainWindow):
     def registerButtonClick(self):
         self.nameError.setText("")
         self.emptyError.setText("")
-        self.__controller.register(self.nameInput.text(), self.modelInput.text(), int(self.capacityInput.text()))
+        self.__controller.register(self.nameInput.text(), self.modelInput.text(), self.capacityInput.text())
 
     # Abre a tela
     def openPlaneRegistrationView(self):
