@@ -20,6 +20,5 @@ class FlightRequestApprovalListController:
     def getFlightRequests(self):
         return self.__flightRequestDao.getAll();
     
-    def nextStep(self, flight):
-        print(flight)
-        # self.__app.openClientSignUpToFlight(flight)
+    def nextStep(self, flightRequest):
+        self.__app.openFlightsRequestsApprovalForm(flightRequest)

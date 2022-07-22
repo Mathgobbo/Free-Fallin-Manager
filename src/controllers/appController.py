@@ -1,6 +1,7 @@
 
 
 from PyQt5.QtWidgets import QApplication
+from src.controllers.flightRequestApprovalFormController import FlightRequestApprovalFormController
 from src.controllers.flightRequestApprovalListController import FlightRequestApprovalListController
 from src.dao.flyingRequestDao import FlyingRequestDAO
 from src.controllers.clientFlightSuccessController import ClientFlightSuccessController
@@ -59,6 +60,7 @@ class AppController:
     self.__clientSignUpToFlightController = ClientFlightsSignUpController(self,self.__flyMemberDao, self.__flyingRequestDao)
     self.__clientFlightSuccessController = ClientFlightSuccessController(self)
     self.__flightRequestApprovalListController = FlightRequestApprovalListController(self, self.__flyingRequestDao)
+    self.__flightRequestApprovalFormController = FlightRequestApprovalFormController(self, self.__flyingRequestDao, self.__flyMemberDao)
     self.__editMemberController = EditMemberController(self, self.__flyMemberDao)
 
   def start(self):
@@ -121,6 +123,9 @@ class AppController:
 
   def openFlightsRequestsApprovalList(self):
     self.__flightRequestApprovalListController.openView()
+
+  def openFlightsRequestsApprovalForm(self, selectedFlyingRequest):
+    self.__flightRequestApprovalFormController.openView(selectedFlyingRequest)
 
   @property
   def adminList(self):
