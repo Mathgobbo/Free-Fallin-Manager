@@ -16,7 +16,9 @@ class FlightRequestApprovalFormView(QMainWindow):
 
         self.acceptButton = self.findChild(QPushButton, "acceptButton")
         self.rejectButton = self.findChild(QPushButton, "rejectButton")
+        self.rejectButton.clicked.connect(self.__controller.submitReject)
         self.addMemberButton = self.findChild(QPushButton, "addMemberButton")
+        self.addMemberButton.clicked.connect(self.addInstructor)
         self.tableInstrutores = self.findChild(QTableWidget, "tableInstrutores")
         self.membersComboBox = self.findChild(QComboBox, "membersComboBox")
         
@@ -31,9 +33,21 @@ class FlightRequestApprovalFormView(QMainWindow):
     def loadData(self):
         selectedFlightRequest =  self.__controller.getSelectedFlightRequest()
         instructors = self.__controller.getInstructors()
-        print(instructors)
+        self.membersComboBox.clear()
         for instructor in instructors:
             self.membersComboBox.addItem(instructor.name + " - " + instructor.type)
+        
+        selectedInstructors = self.__controller.getSelectedInstructors()
+        self.tableInstrutores.setRowCount(len(selectedInstructors))
+        row = 0
+        for selectedInstructor in selectedInstructors:
+            memberName = QLabel(selectedInstructor.name)
+            self.tableInstrutores.setCellWidget(row, 0, memberName)
+            deleteButton = QToolButton()
+            deleteButton.setIcon(QIcon("./src/resources/trashIcon.png"))
+            deleteButton.clicked.connect(self.deleteInstrutor(selectedInstructor))
+            self.tableInstrutores.setCellWidget(row, 1, deleteButton)
+            row = row + 1
 
         self.flightDate = self.findChild(QLabel, "flightDate")
         self.flightDate.setText(str(selectedFlightRequest.fly.date_time.toString()))
@@ -58,3 +72,14 @@ class FlightRequestApprovalFormView(QMainWindow):
 
         self.customerHeight = self.findChild(QLabel, "customerHeight")
         self.customerHeight.setText("Altura: "+str(selectedFlightRequest.user.height)+" Cm")
+
+    def addInstructor(self):
+        flyMember = self.membersComboBox.currentText()
+        self.__controller.addInstructor(flyMember)
+        self.loadData()
+
+    def deleteInstrutor(self, selectedInstructor):
+        def deleteInstructorInside():
+            self.__controller.removeInstructor(selectedInstructor)
+            self.loadData()
+        return deleteInstructorInside;

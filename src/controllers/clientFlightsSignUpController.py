@@ -42,6 +42,7 @@ class ClientFlightsSignUpController:
         
         request = FlyingRequest(False, self.__selectedFlight, selectedMember)
         key = str(request.fly.date_time)+"-"+request.fly.plane.name+"-"+selectedMember.cpf
+        print(key)
         self.__flyingRequestDao.add(key, request)
 
         self.__view.close()
