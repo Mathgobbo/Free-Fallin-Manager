@@ -34,7 +34,7 @@ class FlightRequestApprovalListView(QMainWindow):
         for flightRequest in flightRequests:
             dateTimeColumn = QLabel(str(flightRequest.fly.date_time.toString()))
             planeColumn = QLabel(flightRequest.fly.plane.name)
-            capacityColumn = QLabel(str(flightRequest.fly.plane.capacity_limit - len(flightRequest.fly.members)))
+            capacityColumn = QLabel(str(int(flightRequest.fly.plane.capacity_limit) - len(flightRequest.fly.members)))
             customerColumn = QLabel(str(flightRequest.user.name))
             dateTimeColumn.mousePressEvent = self.nextStep(flightRequest)
             self.table.setCellWidget(row, 0, dateTimeColumn)

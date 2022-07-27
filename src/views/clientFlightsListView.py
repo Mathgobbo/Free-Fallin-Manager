@@ -34,7 +34,7 @@ class ClientFlightsListView(QMainWindow):
 
         flightsToShow = []
         for flight in flights:
-            if flight.plane.capacity_limit > len(flight.members):
+            if int(flight.plane.capacity_limit) > len(flight.members):
                 flightsToShow.append(flight)
 
         self.table.setRowCount(len(flightsToShow))
@@ -45,7 +45,7 @@ class ClientFlightsListView(QMainWindow):
         for flight in flightsToShow:
             dateTimeColumn = QLabel(str(flight.date_time.toString()))
             planeColumn = QLabel(flight.plane.name)
-            capacityColumn = QLabel(str(flight.plane.capacity_limit - len(flight.members)))
+            capacityColumn = QLabel(str(int(flight.plane.capacity_limit) - len(flight.members)))
             dateTimeColumn.mousePressEvent = self.nextStep(flight)
             self.table.setCellWidget(row, 0, dateTimeColumn)
             self.table.setCellWidget(row, 1, planeColumn)

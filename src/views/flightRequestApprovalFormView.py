@@ -56,7 +56,7 @@ class FlightRequestApprovalFormView(QMainWindow):
         self.flightPlane.setText(selectedFlightRequest.fly.plane.name)
 
         self.freePlaces = self.findChild(QLabel, "freePlaces")
-        self.freePlaces.setText("Lugares Disponíveis: "+str(selectedFlightRequest.fly.plane.capacity_limit - len(selectedFlightRequest.fly.members)))
+        self.freePlaces.setText("Lugares Disponíveis: "+str(int(selectedFlightRequest.fly.plane.capacity_limit) - len(selectedFlightRequest.fly.members)))
         
         self.customerName = self.findChild(QLabel, "customerName")
         self.customerName.setText(selectedFlightRequest.user.name)

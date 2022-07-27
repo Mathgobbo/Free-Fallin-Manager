@@ -44,7 +44,7 @@ class FlightsListView(QMainWindow):
             plane = QLabel(flight.plane.name)
             self.flightsTable.setCellWidget(row, 1, plane)
   
-            capacityColumn = QLabel(str(flight.plane.capacity_limit - len(flight.members)))
+            capacityColumn = QLabel(str(int(flight.plane.capacity_limit) - len(flight.members)))
             self.flightsTable.setCellWidget(row, 2, capacityColumn)
             
             botao = QToolButton()

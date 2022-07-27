@@ -44,8 +44,8 @@ class FlightRegistrationController:
             if self.__view.planeComboBox.currentText() == plane.name: 
                 selectedPlane = plane
                 total = plane.capacity_limit
-
-        if len(self.__flyMembers) > total:
+        
+        if len(self.__flyMembers) > int(total):
             return self.__view.flightError.setText("Erro ao cadastrar um voo, capacidade lotada.")
 
         newFlight = Fly(self.__view.dateTimeEditInput.dateTime(), self.__flyMembers, selectedPlane)
