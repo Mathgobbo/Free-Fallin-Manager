@@ -30,3 +30,6 @@ class AdminMenuController:
   
   def goToFlightsRequestApprovalList(self):
     self.__app.openFlightsRequestsApprovalList()
+
+  def goToReportView(self):
+    self.__app.openReportView()

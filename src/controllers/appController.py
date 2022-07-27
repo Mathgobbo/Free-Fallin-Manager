@@ -28,6 +28,7 @@ from src.controllers.editFlightController import EditFlightController
 from src.controllers.membersListController import MembersListController
 from src.controllers.editMemberController import EditMemberController
 from src.views.editMemberView import EditMemberView
+from src.controllers.reportController import ReportController
 
 
 class AppController:
@@ -62,6 +63,7 @@ class AppController:
     self.__flightRequestApprovalListController = FlightRequestApprovalListController(self, self.__flyingRequestDao)
     self.__flightRequestApprovalFormController = FlightRequestApprovalFormController(self, self.__flyingRequestDao, self.__flyMemberDao)
     self.__editMemberController = EditMemberController(self, self.__flyMemberDao)
+    self.__reportController = ReportController(self, self.__flightDao)
 
   def start(self):
     self.__mainMenuController.openView()
@@ -126,6 +128,9 @@ class AppController:
 
   def openFlightsRequestsApprovalForm(self, selectedFlyingRequest):
     self.__flightRequestApprovalFormController.openView(selectedFlyingRequest)
+
+  def openReportView(self):
+    self.__reportController.openView()
 
   @property
   def adminList(self):

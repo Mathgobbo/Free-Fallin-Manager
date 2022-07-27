@@ -23,6 +23,9 @@ class AdminMenuView(QMainWindow):
         self.flightsRequestListButton = self.findChild(QPushButton, "flights_request_approval")
         self.flightsRequestListButton.clicked.connect(self.goToFlightsRequestApprovalList)
 
+        self.reportButton = self.findChild(QPushButton,"report")
+        self.reportButton.clicked.connect(self.goToReport)
+
     def openView(self):
         self.show()
     
@@ -45,6 +48,10 @@ class AdminMenuView(QMainWindow):
     def goToFlightsRequestApprovalList(self):
         self.close()
         self.__controller.goToFlightsRequestApprovalList()
+
+    def goToReport(self):
+        self.close()
+        self.__controller.goToReportView()
 
     
     

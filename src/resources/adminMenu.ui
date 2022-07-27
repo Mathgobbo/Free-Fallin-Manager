@@ -1,267 +1,274 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-      <class>MainWindow</class>
-      <widget class="QMainWindow" name="MainWindow">
-            <property name="geometry">
-                  <rect>
-                        <x>0</x>
-                        <y>0</y>
-                        <width>900</width>
-                        <height>700</height>
-                  </rect>
-            </property>
-            <property name="windowTitle">
-                  <string>Menu Administração</string>
-            </property>
-            <property name="styleSheet">
-                  <string notr="true">background-color: rgb(255, 255, 255)</string>
-            </property>
-            <widget class="QWidget" name="centralwidget">
-                  <layout class="QGridLayout" name="gridLayout">
-                        <item row="3" column="0">
-                              <widget class="QPushButton" name="voos">
-                                    <property name="minimumSize">
-                                          <size>
-                                                <width>400</width>
-                                                <height>50</height>
-                                          </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                          <size>
-                                                <width>400</width>
-                                                <height>50</height>
-                                          </size>
-                                    </property>
-                                    <property name="font">
-                                          <font>
-                                                <pointsize>11</pointsize>
-                                                <bold>true</bold>
-                                          </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                          <string notr="true">color: rgb(255, 255, 255);
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Menu Administração</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255)</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="3" column="0">
+     <widget class="QPushButton" name="voos">
+      <property name="minimumSize">
+       <size>
+        <width>400</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>400</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(68, 165, 255)</string>
-                                    </property>
-                                    <property name="text">
-                                          <string>VISUALIZAR VOOS</string>
-                                    </property>
-                              </widget>
-                        </item>
-                        <item row="6" column="0">
-                              <widget class="QPushButton" name="avioes">
-                                    <property name="minimumSize">
-                                          <size>
-                                                <width>400</width>
-                                                <height>50</height>
-                                          </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                          <size>
-                                                <width>400</width>
-                                                <height>50</height>
-                                          </size>
-                                    </property>
-                                    <property name="font">
-                                          <font>
-                                                <pointsize>11</pointsize>
-                                                <bold>true</bold>
-                                          </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                          <string notr="true">color: rgb(255, 255, 255);
+      </property>
+      <property name="text">
+       <string>VISUALIZAR VOOS</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QPushButton" name="avioes">
+      <property name="minimumSize">
+       <size>
+        <width>400</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>400</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(68, 165, 255)</string>
-                                    </property>
-                                    <property name="text">
-                                          <string>AVIÕES</string>
-                                    </property>
-                              </widget>
-                        </item>
-                        <item row="7" column="0">
-                              <widget class="QPushButton" name="admins">
-                                    <property name="minimumSize">
-                                          <size>
-                                                <width>400</width>
-                                                <height>50</height>
-                                          </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                          <size>
-                                                <width>400</width>
-                                                <height>50</height>
-                                          </size>
-                                    </property>
-                                    <property name="font">
-                                          <font>
-                                                <pointsize>11</pointsize>
-                                                <bold>true</bold>
-                                          </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                          <string notr="true">color: rgb(255, 255, 255);
+      </property>
+      <property name="text">
+       <string>AVIÕES</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QPushButton" name="admins">
+      <property name="minimumSize">
+       <size>
+        <width>400</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>400</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(68, 165, 255)</string>
-                                    </property>
-                                    <property name="text">
-                                          <string>ADMINISTRADORES</string>
-                                    </property>
-                              </widget>
-                        </item>
-                        <item row="4" column="0">
-                              <widget class="QPushButton" name="flights_request_approval">
-                                    <property name="minimumSize">
-                                          <size>
-                                                <width>400</width>
-                                                <height>50</height>
-                                          </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                          <size>
-                                                <width>400</width>
-                                                <height>50</height>
-                                          </size>
-                                    </property>
-                                    <property name="font">
-                                          <font>
-                                                <pointsize>11</pointsize>
-                                                <bold>true</bold>
-                                          </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                          <string notr="true">color: rgb(255, 255, 255);
+      </property>
+      <property name="text">
+       <string>ADMINISTRADORES</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="flights_request_approval">
+      <property name="minimumSize">
+       <size>
+        <width>400</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>400</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(68, 165, 255)</string>
-                                    </property>
-                                    <property name="text">
-                                          <string>VERIFICAR SOLICITAÇÕES PENDENTES</string>
-                                    </property>
-                              </widget>
-                        </item>
-                        <item row="8" column="0">
-                              <widget class="QPushButton" name="pushButton_6">
-                                    <property name="minimumSize">
-                                          <size>
-                                                <width>400</width>
-                                                <height>50</height>
-                                          </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                          <size>
-                                                <width>400</width>
-                                                <height>50</height>
-                                          </size>
-                                    </property>
-                                    <property name="font">
-                                          <font>
-                                                <pointsize>11</pointsize>
-                                                <bold>true</bold>
-                                          </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                          <string notr="true">color: rgb(255, 255, 255);
+      </property>
+      <property name="text">
+       <string>VERIFICAR SOLICITAÇÕES PENDENTES</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QPushButton" name="report">
+      <property name="minimumSize">
+       <size>
+        <width>400</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>400</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(68, 165, 255)</string>
-                                    </property>
-                                    <property name="text">
-                                          <string>EMITIR RELATÓRIO DOS SALTOS</string>
-                                    </property>
-                              </widget>
-                        </item>
-                        <item row="1" column="0">
-                              <widget class="QLabel" name="title">
-                                    <property name="minimumSize">
-                                          <size>
-                                                <width>400</width>
-                                                <height>50</height>
-                                          </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                          <size>
-                                                <width>400</width>
-                                                <height>50</height>
-                                          </size>
-                                    </property>
-                                    <property name="font">
-                                          <font>
-                                                <pointsize>24</pointsize>
-                                                <bold>true</bold>
-                                          </font>
-                                    </property>
-                                    <property name="text">
-                                          <string>Menu Administração</string>
-                                    </property>
-                                    <property name="alignment">
-                                          <set>Qt::AlignCenter</set>
-                                    </property>
-                              </widget>
-                        </item>
-                        <item row="5" column="0">
-                              <widget class="QPushButton" name="membros_de_voo">
-                                    <property name="minimumSize">
-                                          <size>
-                                                <width>400</width>
-                                                <height>50</height>
-                                          </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                          <size>
-                                                <width>400</width>
-                                                <height>50</height>
-                                          </size>
-                                    </property>
-                                    <property name="font">
-                                          <font>
-                                                <pointsize>11</pointsize>
-                                                <bold>true</bold>
-                                          </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                          <string notr="true">color: rgb(255, 255, 255);
+      </property>
+      <property name="text">
+       <string>EMITIR RELATÓRIO DOS SALTOS</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="title">
+      <property name="minimumSize">
+       <size>
+        <width>400</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>400</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>24</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Menu Administração</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QPushButton" name="membros_de_voo">
+      <property name="minimumSize">
+       <size>
+        <width>400</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>400</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(68, 165, 255)</string>
-                                    </property>
-                                    <property name="text">
-                                          <string>MEMBROS DE VOO</string>
-                                    </property>
-                              </widget>
-                        </item>
-                        <item row="0" column="0">
-                              <spacer name="verticalSpacer">
-                                    <property name="orientation">
-                                          <enum>Qt::Vertical</enum>
-                                    </property>
-                                    <property name="sizeHint" stdset="0">
-                                          <size>
-                                                <width>20</width>
-                                                <height>40</height>
-                                          </size>
-                                    </property>
-                              </spacer>
-                        </item>
-                        <item row="2" column="0">
-                              <spacer name="verticalSpacer_2">
-                                    <property name="orientation">
-                                          <enum>Qt::Vertical</enum>
-                                    </property>
-                                    <property name="sizeHint" stdset="0">
-                                          <size>
-                                                <width>20</width>
-                                                <height>40</height>
-                                          </size>
-                                    </property>
-                              </spacer>
-                        </item>
-                        <item row="9" column="0">
-                              <spacer name="verticalSpacer_3">
-                                    <property name="orientation">
-                                          <enum>Qt::Vertical</enum>
-                                    </property>
-                                    <property name="sizeHint" stdset="0">
-                                          <size>
-                                                <width>20</width>
-                                                <height>40</height>
-                                          </size>
-                                    </property>
-                              </spacer>
-                        </item>
-                  </layout>
-            </widget>
-      </widget>
-      <resources />
-      <connections />
+      </property>
+      <property name="text">
+       <string>MEMBROS DE VOO</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="0">
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="9" column="0">
+     <spacer name="verticalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
 </ui>
