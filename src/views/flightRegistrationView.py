@@ -34,6 +34,8 @@ class FlightRegistrationView(QMainWindow):
         self.flightRegistrationButton = self.findChild(QPushButton, "flightRegistration")
         self.flightRegistrationButton.clicked.connect(self.flightRegistrationSubmit)
 
+        self.flightError = self.findChild(QLabel, "validateLabel")
+
     def showEvent(self, ev):
         self.planeComboBox.clear()
         for i in self.__controller.getPlanes():
@@ -60,40 +62,54 @@ class FlightRegistrationView(QMainWindow):
     def loadData(self):
         membersList = self.__controller.getFlyMembersList()
 
-        self.tablePiloto.setRowCount(3)
-        self.tableInstrutores.setRowCount(3)
-        self.tableAlunos.setRowCount(3)
-        self.tablePassageiros.setRowCount(3)
-        row = 0
+        rowPiloto = 0
+        rowInstrutor = 0
+        rowPassageiro = 0
+        rowAluno = 0
 
         for i in membersList:
             if FlyingMemberTypeEnum(i.type) == FlyingMemberTypeEnum.PILOTO:
+                self.tablePiloto.setRowCount(rowPiloto + 1)
                 memberName = QLabel(i.name)
-                self.tablePiloto.setCellWidget(row, 0, memberName)
+                self.tablePiloto.setCellWidget(rowPiloto, 0, memberName)
                 deleteButton = QToolButton()
                 deleteButton.setIcon(QIcon("./src/resources/trashIcon.png"))
                 deleteButton.clicked.connect(self.deletePiloto)
-                self.tablePiloto.setCellWidget(row, 1, deleteButton)
-
-            
+                self.tablePiloto.setCellWidget(rowPiloto, 1, deleteButton)
+                rowPiloto = rowPiloto + 1
+          
             if FlyingMemberTypeEnum(i.type) == FlyingMemberTypeEnum.INSTRUTOR:
+                self.tableInstrutores.setRowCount(rowInstrutor + 1)
                 memberName = QLabel(i.name)
-                self.tableInstrutores.setCellWidget(row, 0, memberName)
-            
+                self.tableInstrutores.setCellWidget(rowInstrutor, 0, memberName)
+                deleteButton = QToolButton()
+                deleteButton.setIcon(QIcon("./src/resources/trashIcon.png"))
+                deleteButton.clicked.connect(self.deleteInstrutor)
+                self.tableInstrutores.setCellWidget(rowInstrutor, 1, deleteButton)
+                rowInstrutor = rowInstrutor + 1
+
             if FlyingMemberTypeEnum(i.type) == FlyingMemberTypeEnum.ALUNO:
+                self.tableAlunos.setRowCount(rowAluno + 1)
                 memberName = QLabel(i.name)
-                self.tableAlunos.setCellWidget(row, 0, memberName)
+                self.tableAlunos.setCellWidget(rowAluno, 0, memberName)
+                deleteButton = QToolButton()
+                deleteButton.setIcon(QIcon("./src/resources/trashIcon.png"))
+                deleteButton.clicked.connect(self.deleteAluno)
+                self.tableAlunos.setCellWidget(rowAluno, 1, deleteButton)
+                rowAluno = rowAluno + 1
             
             if FlyingMemberTypeEnum(i.type) == FlyingMemberTypeEnum.PASSAGEIRO:
+                self.tablePassageiros.setRowCount(rowPassageiro + 1)
                 memberName = QLabel(i.name)
-                self.tablePassageiros.setCellWidget(row, 0, memberName)
-
+                self.tablePassageiros.setCellWidget(rowPassageiro, 0, memberName)
+                deleteButton = QToolButton()
+                deleteButton.setIcon(QIcon("./src/resources/trashIcon.png"))
+                deleteButton.clicked.connect(self.deletePassageiro)
+                self.tablePassageiros.setCellWidget(rowPassageiro, 1, deleteButton)
+                rowPassageiro = rowPassageiro + 1
+        
     def flightRegistrationSubmit(self):
         self.__controller.flightRegistrationSubmit()
-        self.tablePiloto.setRowCount(0)
-        self.tableAlunos.setRowCount(0)
-        self.tableInstrutores.setRowCount(0)
-        self.tablePassageiros.setRowCount(0)
 
     def botaoVoltarClick(self):
         self.close()
@@ -101,3 +117,12 @@ class FlightRegistrationView(QMainWindow):
     
     def deletePiloto(self):
         self.tablePiloto.setRowCount(0)
+    
+    def deletePassageiro(self):
+        self.tablePassageiros.setRowCount(0)
+    
+    def deleteAluno(self):
+        self.tableAlunos.setRowCount(0)
+    
+    def deleteInstrutor(self):
+        self.tableInstrutores.setRowCount(0)
